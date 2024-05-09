@@ -2,6 +2,8 @@ import wallet from '../src/img/wallet.svg'
 import login from '../src/img/login.svg'
 import register from '../src/img/register.svg'
 
+import './App.css'
+
 function App() {
   return (
     <main>
@@ -9,12 +11,12 @@ function App() {
       <img src={wallet}/>
       <section>
         <div>
-          <img src={login}/>
-          <p>Login</p>
+          <img className='access' src={login}/>
+          <p className='access'>Login</p>
         </div>
         <div>
-          <img src={register}/>
-          <p>Register</p>
+          <img className='access' src={register}/>
+          <p className='access'>Register</p>
         </div>
       </section>
     </main>
