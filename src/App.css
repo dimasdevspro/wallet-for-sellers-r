@@ -18,9 +18,14 @@ h1, h4, p {
     color: #2C6871;
 }
 
+.access {
+    text-decoration: none;
+}
+
 h1:hover, h4:hover, .access:hover {
     color: #000000;
     transition: 0.5s;
     cursor: pointer;
     font-weight: bold;
+
 }

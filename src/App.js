@@ -13,13 +13,13 @@ function App() {
       <img src={wallet} alt='wallet'/>
       <Router>
       <section>
-        <Link to='/login'>
-        <img className='access' src={login} alt='login'/>
-          <p className='access'>Login</p>
+        <Link to='/login' className='access'>
+        <img src={login} alt='login'/>
+          <p>Login</p>
         </Link>
-        <Link to='/register'>
-          <img className='access' src={register} alt='register'/>
-          <p className='access'>Register</p>
+        <Link to='/register' className='access'>
+          <img src={register} alt='register'/>
+          <p>Register</p>
         </Link>
       </section>
       <Routes>
