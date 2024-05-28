@@ -14,16 +14,17 @@ section {
     
 }
 
-h1, h4, p {
+h1, h4, a {
     color: #2C6871;
+    text-decoration: none
 }
 
-.access {
-    text-decoration: none;
+.links {
+    display: grid;
+    height: 6em;
 }
 
-.access:hover {
-    color: #000000;
+.links:hover {
     transition: 0.5s;
     cursor: pointer;
     font-weight: bold;
