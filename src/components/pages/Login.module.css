@@ -3,6 +3,39 @@
     height: 60vh;
 }
 
+.body button {
+    display: flex;
+    position: relative;
+    right: -5.75em;
+    width: 2em;
+    border: none;
+    background-color: #ffffff;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 3em;
+}
+
+.input {
+    display: flex;
+}
+
+.input img {
+    width: 2em;
+    align-items: center;
+}
+
+.input input {
+    background-color: #ededed;
+    border: none;
+    margin: 0.5em;
+}
+
 .sr_only {
     position: absolute;
     height: 1px;
