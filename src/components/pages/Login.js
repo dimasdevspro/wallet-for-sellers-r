@@ -11,7 +11,7 @@ function Login(){
                 <div className={styles.input}>
                 <label className={styles.sr_only} for="login-seller">Login</label>
                 <img src={login} alt='Login'/>
-                <input type='text' name='login' id='login-seller' placeholder='input your nickname'/>
+                <input type='text' name='login' id='login-seller' placeholder='input your login'/>
                 </div>
                 <div className={styles.input}>
                 <label className={styles.sr_only} for="password-seller">Password</label>
