@@ -1,6 +1,7 @@
 .body {
     display: block;
     height: 60vh;
+    padding: 1em;
 }
 
 .h1, .h4 {
