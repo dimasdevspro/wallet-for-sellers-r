@@ -1,7 +1,7 @@
-function Company(){
+function App(){
     return (
         <div>Company</div>
     )
 }
 
-export default Company
+export default App
