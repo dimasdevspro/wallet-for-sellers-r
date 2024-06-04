@@ -6,7 +6,7 @@ function Register(){
     return(
         <div className={styles.body}>
             <h1>Register´s Seller</h1>
-            <form  className={styles.form} method="post" action="./login">
+            <form  className={styles.form} method="post" action="./register">
             <div className={styles.input}>
                 <label className={styles.sr_only} for="name-seller">Name</label>
                 <p>Name</p>
