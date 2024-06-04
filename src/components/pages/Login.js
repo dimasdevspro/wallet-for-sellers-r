@@ -7,6 +7,7 @@ import styles from './Login.module.css';
 function Login(){
     return (
         <div className={styles.body}>
+            <h1>Login´s Seller</h1>
             <form  className={styles.form} method="post" action="./login">
                 <div className={styles.input}>
                 <label className={styles.sr_only} for="login-seller">Login</label>
