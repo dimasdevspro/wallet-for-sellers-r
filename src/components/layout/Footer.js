@@ -16,7 +16,7 @@ function Footer(){
                <a href='https://www.linkedin.com/in/dimas-apereira/' target='blank'><FaLinkedin/></a>
             </li>
          </ul>
-           <p> E-WALLET © 2024</p>
+           <p> DEVSPRO SOLUTION © 2024</p>
         </footer>
     )
 }
