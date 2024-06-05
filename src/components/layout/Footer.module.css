@@ -4,6 +4,9 @@
     background-color: #ededed;
     padding: 1em;
     text-align: center;
+    bottom: -1.5em;
+    position: absolute;
+    width: 100vw;
 }
 
 .list {
