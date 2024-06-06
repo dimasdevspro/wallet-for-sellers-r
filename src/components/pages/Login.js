@@ -8,7 +8,7 @@ function Login(){
     return (
         <div className={styles.body}>
             <h1>Login´s Seller</h1>
-            <form  className={styles.form} method="post" action="./login">
+            <form  className={styles.form} method="" action="./logon">
                 <div className={styles.input}>
                 <label className={styles.sr_only} for="login-seller">Login</label>
                 <img src={login} alt='Login'/>
