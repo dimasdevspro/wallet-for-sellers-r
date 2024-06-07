@@ -12,7 +12,6 @@ function Logon() {
                 <h1>Seller</h1>
                 <label className={styles.sr_only} for='seller'>Seller</label>
                 <input type='text' name='seller' id='seller'/>
-            </form>
             <div className={styles.div_son}>
                 <button>
                     <img src={Costumers} alt='Costumers'/>
@@ -23,6 +22,7 @@ function Logon() {
                     <p>Add Costumers</p>
                 </button>
             </div>
+            </form>
         </div>
     )
 }
