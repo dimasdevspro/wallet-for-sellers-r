@@ -1,3 +1,39 @@
+.div_father {
+    display: block;
+    margin: 1em auto;
+}
+
+.div_father input {
+    background-color: #cbd2d8;
+    border: none;
+    width: 13em;
+    height: 1.7em;
+}
+
+#input_search {
+    margin: 1em 0;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form ul {
+    padding: 0;
+}
+
+.form li {
+    list-style: none;
+}
+
+#costumer_img {
+    width: 1.7em;
+    height: 1.7em;
+}
+
 .sr_only {
     position: absolute;
     height: 1px;
