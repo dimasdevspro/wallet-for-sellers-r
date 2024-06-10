@@ -21,7 +21,7 @@ function Logon() {
                 </Link>
                 <Link to='/costumer-add'>
                     <img src={Addcostumers} alt='Add costumers'/>
-                    <p>Add Costumers</p>
+                    <p>Add Costumer</p>
                 </Link>
             </div>
             </form>
