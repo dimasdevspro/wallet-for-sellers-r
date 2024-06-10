@@ -4,6 +4,8 @@ import Seller from '../../img/login.svg'
 import Costumers from '../../img/Costumers.svg'
 import Addcostumers from '../../img/Addcostumers.svg'
 
+import { Link } from 'react-router-dom';
+
 function Logon() {
     return(
         <div className={styles.div_father}>
@@ -13,14 +15,14 @@ function Logon() {
                 <label className={styles.sr_only} for='seller'>Seller</label>
                 <input type='text' name='seller' id='seller'/>
             <div className={styles.div_son}>
-                <button>
+                <Link to='/costumers'>
                     <img src={Costumers} alt='Costumers'/>
                     <p>Costumers</p>
-                </button>
-                <button>
+                </Link>
+                <Link to='/costumer-add'>
                     <img src={Addcostumers} alt='Add costumers'/>
                     <p>Add Costumers</p>
-                </button>
+                </Link>
             </div>
             </form>
         </div>
