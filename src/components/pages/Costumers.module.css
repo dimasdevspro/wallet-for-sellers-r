@@ -32,6 +32,8 @@
 #costumer_img {
     width: 1.7em;
     height: 1.7em;
+    position: absolute;
+    left: 23em;
 }
 
 .sr_only {
