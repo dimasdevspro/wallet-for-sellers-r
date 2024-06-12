@@ -40,6 +40,11 @@
     align-items: center;
 }
 
+.form img {
+    width: 6.25em;
+    height: 6.25em;
+}
+
 .sr_only {
     position: absolute;
     height: 1px;
