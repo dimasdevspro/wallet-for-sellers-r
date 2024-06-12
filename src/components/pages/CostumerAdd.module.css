@@ -20,6 +20,7 @@
 .form button {
     background-color: #ffffff;
     border: none;
+    cursor: pointer;
 
 }
 
@@ -29,8 +30,8 @@
 }
 
 .form img {
-    width: 1.7em;
-    height: 1.7em;
+    width: 3em;
+    height: 3em;
 }
 
 .input {
