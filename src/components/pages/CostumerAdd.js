@@ -4,6 +4,8 @@ import Costumers from '../../img/Costumers.svg';
 
 import styles from './CostumerAdd.module.css';
 
+import { Link } from 'react-router-dom';
+
 function CostumerAdd(){
     return(
         <div className={styles.container}>
@@ -34,9 +36,9 @@ function CostumerAdd(){
                 <textarea name="informations" id="infos" className={styles.text_area}></textarea>
             </div>
             <div className={styles.buttons_form}>
-                <button>
-                    <img  src={Costumers} alt="Button for list costumers"/>
-                </button>
+                <Link to='/costumers'>
+                    <img src={Costumers} alt='Costumers'/>
+                </Link>
                 <button >
                     <img src={Save} alt="Button for save new costumer"/>
                 </button>
