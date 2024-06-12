@@ -31,7 +31,7 @@ function CostumerAdd(){
                         placeholder="(xx)xxxxxxxxx"
                         />
             </div>
-            <div>
+            <div className={styles.input}>
                 <p>Informations</p>
                 <textarea name="informations" id="infos" className={styles.text_area}></textarea>
             </div>

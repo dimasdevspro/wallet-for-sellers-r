@@ -1,6 +1,6 @@
 .container {
     position: absolute;
-    margin: 0 34em;
+    margin: 0 32em;
 }
 
 .header {
@@ -9,6 +9,10 @@
 
 .header img {
     justify-self: center;
+}
+
+.header h1 {
+    text-align: center
 }
 
 .form {
@@ -42,6 +46,11 @@
     background-color: #ededed;
     border: none;
     margin: 0.5em;
+}
+
+.input p {
+    color: #2C6871;
+    font-weight: bold;
 }
 
 .text_area {
