@@ -1,11 +1,59 @@
 .container {
     position: absolute;
-    margin: 0 auto;
+    margin: 0 34em;
+}
+
+.header {
+    display: grid;
+}
+
+.header img {
+    justify-self: center;
 }
 
 .form {
     position: relative;
+    display: grid;
+
+}
+
+.form button {
+    background-color: #ffffff;
+    border: none;
+
+}
+
+.buttons_form {
+    justify-self: right;
     display: flex;
+}
+
+.form img {
+    width: 1.7em;
+    height: 1.7em;
+}
+
+.input {
+    display: flex;
+}
+
+.input input {
+    background-color: #ededed;
+    border: none;
+    margin: 0.5em;
+}
+
+.text_area {
+    display: flex;
+    background-color: #ededed;
+    border: none;
+    margin: 0.5em;
+    width: 16em;
+    height: 8.5em;
+}
+
+.text_area, .input {
+    justify-content: right;
 }
 
 .sr_only {
