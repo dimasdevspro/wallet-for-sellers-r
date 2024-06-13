@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 import Seller from '../../img/login.svg'
+import AddCostumer from '../../img/Addcostumers.svg';
 
 import styles from './Costumers.module.css'
 
@@ -23,6 +24,11 @@ function Costumers(){
                 </div>
 
             </form>
+            <div>
+                <Link to='/costumer-add'>
+                    <img src={AddCostumer} alt=''/>
+                </Link>
+            </div>
         </div>
     )
 }
