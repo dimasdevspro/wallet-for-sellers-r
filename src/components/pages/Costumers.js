@@ -22,13 +22,13 @@ function Costumers(){
                     <input type="text" name="costumer"/>
                     </Link>
                 </div>
-
-            </form>
-            <div>
-                <Link to='/costumer-add'>
+                <div className={styles.link_add_costumer}>
+                    <Link to='/costumer-add'>
                     <img src={AddCostumer} alt=''/>
-                </Link>
-            </div>
+                    </Link>
+                </div>
+            </form>
+            
         </div>
     )
 }

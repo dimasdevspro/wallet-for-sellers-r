@@ -41,6 +41,16 @@
     left: 32em;
 }
 
+.link_add_costumer {
+    position: relative;
+    right: -4em;
+}
+
+.link_add_costumer img {
+    width: 3em;
+    height: 3em;
+}
+
 .sr_only {
     position: absolute;
     height: 1px;
