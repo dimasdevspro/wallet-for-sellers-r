@@ -10,7 +10,7 @@ function CostumerAdd(){
     return(
         <div className={styles.container}>
             <div className={styles.header}>
-                <img src={AddCostumer}/>
+                <img src={AddCostumer} alt='add costumer'/>
                 <h1>Add Costumer</h1>
             </div>
         <form method="" action="" className={styles.form}>
