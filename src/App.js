@@ -9,6 +9,7 @@ import Costumers from '../src/components/pages/Costumers'
 import CostumerInfo from '../src/components/pages/CostumerInfo'
 import CostumerAdd from '../src/components/pages/CostumerAdd'
 import Navbar from './components/layout/Navbar'
+import Navbar2 from './components/layout/Navbar2'
 import Footer from './components/layout/Footer'
 import './App.css'
 
@@ -18,6 +19,7 @@ function App() {
 
     <Router>
       <Navbar/>
+      <Navbar2/>
       <Routes>
       <Route exact path='/' element={<Home/>}/>
       <Route path='/login' element={<Login/>}/>
