@@ -37,3 +37,9 @@ a {
         display: flex;
     }
 }
+
+@media (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
