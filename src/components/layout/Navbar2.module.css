@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #ededed;
     padding: 1em;
 }
@@ -9,6 +10,7 @@
     width: 4em;
     height: 4em;
     color: #2c6871;
+    cursor: pointer;
 }
 
 .list_unvisible {
