@@ -1,6 +1,8 @@
 .div_father {
     display: block;
-    margin: 1em auto;
+    margin: 0 auto;
+    padding: 1em;
+    height: 60vh;
 }
 
 .div_father input {
