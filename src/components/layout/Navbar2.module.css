@@ -13,6 +13,7 @@
 
 .list_unvisible {
     display: none;
+    transition: 0.8s;
 }
 
 .list_visible {
@@ -22,6 +23,7 @@
     margin-top: 3em;
     list-style: none;
     align-items:center;
+    transition: 0.8s;
 }
 
 li {
