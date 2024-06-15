@@ -15,8 +15,8 @@ function Footer(){
             <li>
                <a href='https://www.linkedin.com/in/dimas-apereira/' target='blank'><FaLinkedin/></a>
             </li>
+           <li><p>DEVSPRO SOLUTION © 2024</p></li>
          </ul>
-           <p> DEVSPRO SOLUTION © 2024</p>
         </footer>
     )
 }
