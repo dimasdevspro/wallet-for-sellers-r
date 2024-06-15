@@ -17,7 +17,7 @@ function Navbar2(){
         <nav className={styles.navbar}>
                 <img src={wallet} alt='wallet' />
                 <FiAlignJustify onClick={ToggleClass}/>
-            <ul className={isActive ? styles.list_visible : styles.list_unvisible }>
+            <ul className={isActive ? styles.list_unvisible : styles.list_visible }>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/login'>Login</Link></li>
                 <li><Link to='/register'>Register</Link></li>
