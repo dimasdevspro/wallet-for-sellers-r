@@ -4,14 +4,20 @@ import styles from '../layout/Navbar2.module.css'
 
 import { FiAlignJustify } from "react-icons/fi";
 
-import menuMobile from './MenuMobile';
+import { useState } from 'react';
 
 function Navbar2(){
+
+    const [isActive, setActive ] = useState("false");
+    const ToggleClass = () => {
+        setActive(!isActive);
+    }; 
+
     return (
         <nav className={styles.navbar}>
-                <img src={wallet} alt='wallet' onClick={menuMobile.moving}/>
+                <img src={wallet} alt='wallet' onClick={ToggleClass}/>
                 <FiAlignJustify />
-            <ul className={styles.list_unvisible}>
+            <ul className={isActive ? "list_visible" : null }>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/login'>Login</Link></li>
                 <li><Link to='/register'>Register</Link></li>
