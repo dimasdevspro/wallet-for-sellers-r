@@ -1,0 +1,19 @@
+{
+    "seller": [
+        {
+            "name":"",
+            "email":"",
+            "phone":"",
+            "login": "",
+            "password":"",
+            "costumers": [
+                {
+                    "name":"",
+                    "email":"",
+                    "phone":"",
+                    "informations":""
+                }
+            ]
+        }
+    ]
+}
