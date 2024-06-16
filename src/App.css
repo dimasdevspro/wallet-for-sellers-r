@@ -1,5 +1,6 @@
 html, body {
     height: 100vh;
+    font-size: clamp(0.5em, 0.75em + 1vw, 1em)
 }
 
 main {
