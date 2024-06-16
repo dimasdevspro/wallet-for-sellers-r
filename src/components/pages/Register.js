@@ -1,10 +1,38 @@
 import styles from './Register.module.css';
 
 import save from '../../img/save.svg';
+import { useNavigate } from 'react-router-dom';
 
 function Register(){
 
-    
+    const navigate = useNavigate();
+
+    function createPost(seller){
+
+        // initialize costumers
+
+        seller.costumers = {
+            name: '',
+            email:'',
+            phone:'',
+            informations:''
+        }
+
+        fetch('http://localhost:5000/seller', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            params: JSON.stringify(seller)
+        })
+        .then((resp) => resp.json)
+        .then((data) => {
+            console.log(data)
+            //redirect
+        })
+        .catch(err => console.log(err))
+    }
+
     return(
         <div className={styles.body}>
             <h1>Register´s Seller</h1>
@@ -34,8 +62,8 @@ function Register(){
                 <p>Password</p>
                 <input type='password' name='password' placeholder='input your password'/> 
                 </div>
-            <button>
-                <img src={save} alt='button login'/>    
+            <button onClick={createPost}>
+                <img src={save} alt='button save'/>    
             </button>   
             </form>
         </div>
