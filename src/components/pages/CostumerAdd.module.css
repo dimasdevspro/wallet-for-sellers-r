@@ -3,6 +3,8 @@
     width: 21em;
     height: 36em;
     display: block;
+    position: relative;
+    z-index: -1;
 }
 
 .header {
