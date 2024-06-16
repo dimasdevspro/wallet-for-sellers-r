@@ -28,7 +28,7 @@ function CostumerAdd(){
                 <label className={styles.sr_only} for="phone-costumer">Phone</label>
                 <p>Phone</p>
                 <input type="tel" name="phone-costumer" id="phone-costumer" 
-                        placeholder="(xx)xxxxxxxxx"
+                        placeholder='input your phone or cel'
                         />
             </div>
             <div className={styles.input}>

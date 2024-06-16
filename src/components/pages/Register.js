@@ -20,7 +20,7 @@ function Register(){
                 <div className={styles.input}>
                 <label className={styles.sr_only} for="phone-seller">Phone</label>
                 <p>Phone</p>
-                <input type='tel' name='tel' id='phone-seller' placeholder='+xx(xx)xxxxxxxxx' pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                <input type='tel' name='tel' id='phone-seller' placeholder='input your phone or cel'/>
                 </div>
                 <div className={styles.input}>
                 <label className={styles.sr_only} for="login-seller">Login</label>
