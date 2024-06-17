@@ -4,27 +4,3 @@
     padding: 1em;
 }
 
-.body button {
-    display: flex;
-    position: relative;
-    right: 1.25em;
-    width: 2em;
-    border: none;
-    background-color: #ffffff;
-}
-
-.form {
-    margin: 0 auto;
-    width: 16em;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    padding: 3em;
-}
-
-.form button {
-    cursor: pointer;
-}
-

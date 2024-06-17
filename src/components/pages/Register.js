@@ -1,8 +1,8 @@
 import styles from './Register.module.css';
 
-import save from '../../img/save.svg';
 import { useNavigate } from 'react-router-dom';
-import Input from '../form/Input';
+
+import RegisterForm from '../form/RegisterForm';
 
 function Register(){
 
@@ -37,41 +37,7 @@ function Register(){
     return(
         <div className={styles.body}>
             <h1>Register´s Seller</h1>
-            <form  className={styles.form}>
-                <Input
-                type="text"
-                text="Name"
-                name="name"
-                placeholder="input your name"
-                />
-                <Input
-                type="email"
-                text="Email"
-                name="email"
-                placeholder="input your email"
-                />
-                <Input
-                type="tel"
-                text="Phone"
-                name="phone"
-                placeholder="input your phone or cel"
-                />
-                <Input
-                type="text"
-                text="Login"
-                name="login"
-                placeholder="input your login"
-                />
-                <Input
-                type="password"
-                text="Password"
-                name="password"
-                placeholder="input your password"
-                />
-            <button onClick={createPost}>
-                <img src={save} alt='button save'/>    
-            </button>   
-            </form>
+            <RegisterForm/>
         </div>
     )
 }
