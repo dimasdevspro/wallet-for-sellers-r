@@ -1,19 +1,47 @@
 {
-    "seller": [
+  "seller": [
+    {
+      "name": "",
+      "email": "",
+      "phone": "",
+      "login": "",
+      "password": "",
+      "costumers": [
         {
-            "name":"",
-            "email":"",
-            "phone":"",
-            "login": "",
-            "password":"",
-            "costumers": [
-                {
-                    "name":"",
-                    "email":"",
-                    "phone":"",
-                    "informations":""
-                }
-            ]
+          "name": "",
+          "email": "",
+          "phone": "",
+          "informations": ""
         }
-    ]
+      ],
+      "id": "63c8"
+    },
+    {
+      "id": "090a",
+      "name": "teste",
+      "email": "dimasalquimista@gmail.com",
+      "phone": "1193222811",
+      "login": "dimasalquimista",
+      "password": "123",
+      "costumers": []
+    },
+    {
+      "id": "51bc",
+      "name": "Dimas Alves Pereira",
+      "email": "dimasalquimista@gmail.com",
+      "phone": "11932228112",
+      "login": "dimasalquimista",
+      "password": "Fenix@369",
+      "costumers": []
+    },
+    {
+      "id": "1034",
+      "name": "João Ferreira de Abreu",
+      "email": "joao@hotmail.com",
+      "phone": "11983321313",
+      "login": "joaofa",
+      "password": "123",
+      "costumers": []
+    }
+  ]
 }

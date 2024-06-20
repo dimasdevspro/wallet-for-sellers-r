@@ -12,24 +12,21 @@ function Register(){
 
         // initialize costumers
 
-        seller.costumers = {
-            name: '',
-            email:'',
-            phone:'',
-            informations:''
-        }
+        seller.costumers = []
 
         fetch('http://localhost:5000/seller', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             },
-            params: JSON.stringify(seller)
+            body: JSON.stringify(seller)
         })
         .then((resp) => resp.json)
         .then((data) => {
-            console.log(data)
+            
             //redirect
+            const state = {message: "Seller created successfully!"}
+            navigate("/login", {state})
         })
         .catch(err => console.log(err))
     }
@@ -37,7 +34,7 @@ function Register(){
     return(
         <div className={styles.body}>
             <h1>Register´s Seller</h1>
-            <RegisterForm/>
+            <RegisterForm handleSubmit={createPost}/>
         </div>
     )
 }
