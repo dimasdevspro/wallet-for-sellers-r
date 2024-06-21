@@ -42,6 +42,15 @@
       "login": "joaofa",
       "password": "123",
       "costumers": []
+    },
+    {
+      "id": "b93a",
+      "name": "Dimas Alves Pereira",
+      "email": "dimasalquimista@gmail.com",
+      "phone": "11932228112",
+      "login": "dimasalquimista",
+      "password": "Fenix@369",
+      "costumers": []
     }
   ]
 }
