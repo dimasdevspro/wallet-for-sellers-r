@@ -1,0 +1,46 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 3em;
+}
+
+.form button {
+    display: flex;
+    position: relative;
+    right: -5.75em;
+    width: 2em;
+    border: none;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.input {
+    display: flex;
+}
+
+.input img {
+    width: 2em;
+    align-items: center;
+}
+
+.input input {
+    background-color: #ededed;
+    border: none;
+    margin: 0.5em;
+    padding: 1.0em;
+}
+
+.sr_only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
