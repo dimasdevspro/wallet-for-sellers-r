@@ -9,7 +9,7 @@ function LoginForm({ handleSubmit, sellerData }){
     return (
         <form  className={styles.form}>
                 <div className={styles.input}>
-                <label className={styles.sr_only}>Login</label>
+                <label className={styles.sr_only} htmlFor='login'>Login</label>
                 <img src={login} alt='Login'/>
                 <Input
                 type='text' 
@@ -18,7 +18,7 @@ function LoginForm({ handleSubmit, sellerData }){
                 />
                 </div>
                 <div className={styles.input}>
-                <label className={styles.sr_only}>Password</label>
+                <label className={styles.sr_only} htmlFor='password'>Password</label>
                 <img src={Key} alt='password'/>
                 <Input
                 type='password'

@@ -51,6 +51,15 @@
       "login": "dimasalquimista",
       "password": "Fenix@369",
       "costumers": []
+    },
+    {
+      "id": "64ef",
+      "name": "Fernanda Oliveira",
+      "email": "feoliveira@hc.com",
+      "phone": "11963638181",
+      "login": "feoliveira",
+      "password": "123",
+      "costumers": []
     }
   ]
 }
