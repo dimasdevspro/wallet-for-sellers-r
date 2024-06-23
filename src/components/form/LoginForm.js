@@ -28,7 +28,7 @@ function LoginForm({ handleSubmit, sellerData }){
                 <Input
                 type='text' 
                 name='login' 
-                placeholder='input your login'
+                placeholder='input your email'
                 handleOnChange={handleChange}
                 />
                 </div>

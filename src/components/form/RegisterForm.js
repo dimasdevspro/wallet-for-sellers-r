@@ -47,7 +47,7 @@ function RegisterForm({ handleSubmit, sellerData }){
                 type="text"
                 text="Login"
                 name="login"
-                placeholder="input your login"
+                placeholder="input your email"
                 handleOnChange={handleChange}
                 value={seller.login ? seller.login : ''}
                 />
