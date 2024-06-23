@@ -13,9 +13,9 @@ function Login(){
         })
         .then((resp) => resp.json())
         .then((data) => {
-            const loginInput = document.getElementById("login").value
+            const loginInput = document.getElementById("login").value          
             const loginFind = data.find(seller => seller.login === loginInput)
-            console.log(loginFind)
+                console.log(loginFind)
         })
         .catch(err => console.log(err))
     }
