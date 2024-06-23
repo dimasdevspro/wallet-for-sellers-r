@@ -11,7 +11,7 @@ function Login(){
                 'Content-type': 'application/json'
             }
         })
-        .then((resp) => resp.json)
+        .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
         })

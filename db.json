@@ -17,47 +17,11 @@
       "id": "63c8"
     },
     {
-      "id": "090a",
-      "name": "teste",
-      "email": "dimasalquimista@gmail.com",
-      "phone": "1193222811",
-      "login": "dimasalquimista",
-      "password": "123",
-      "costumers": []
-    },
-    {
-      "id": "51bc",
+      "id": "120f",
       "name": "Dimas Alves Pereira",
       "email": "dimasalquimista@gmail.com",
       "phone": "11932228112",
       "login": "dimasalquimista",
-      "password": "Fenix@369",
-      "costumers": []
-    },
-    {
-      "id": "1034",
-      "name": "João Ferreira de Abreu",
-      "email": "joao@hotmail.com",
-      "phone": "11983321313",
-      "login": "joaofa",
-      "password": "123",
-      "costumers": []
-    },
-    {
-      "id": "b93a",
-      "name": "Dimas Alves Pereira",
-      "email": "dimasalquimista@gmail.com",
-      "phone": "11932228112",
-      "login": "dimasalquimista",
-      "password": "Fenix@369",
-      "costumers": []
-    },
-    {
-      "id": "64ef",
-      "name": "Fernanda Oliveira",
-      "email": "feoliveira@hc.com",
-      "phone": "11963638181",
-      "login": "feoliveira",
       "password": "123",
       "costumers": []
     }
