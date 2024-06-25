@@ -1,27 +1,11 @@
 {
   "seller": [
     {
-      "name": "",
-      "email": "",
-      "phone": "",
-      "login": "",
-      "password": "",
-      "costumers": [
-        {
-          "name": "",
-          "email": "",
-          "phone": "",
-          "informations": ""
-        }
-      ],
-      "id": "63c8"
-    },
-    {
       "id": "120f",
-      "name": "Dimas Alves Pereira",
-      "email": "dimasalquimista@gmail.com",
-      "phone": "11932228112",
-      "login": "dimasalquimista",
+      "name": "João Batuta",
+      "email": "joaobat@batuta.com.br",
+      "phone": "11942238181",
+      "login": "joaobat@batuta.com.br",
       "password": "123",
       "costumers": []
     }

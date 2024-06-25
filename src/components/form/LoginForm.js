@@ -18,7 +18,7 @@ function LoginForm({ handleSubmit, sellerData }){
 
     function handleChange(e) {
         setSeller({...seller, [e.target.name]: e.target.value})
-        console.log(seller)
+
     }
     return (
         <form  onSubmit={submit} className={styles.form} >
