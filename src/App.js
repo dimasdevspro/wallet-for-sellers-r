@@ -1,4 +1,4 @@
-import RoutesPublicAndPrivate from './routes/RoutesPublicAndPrivate'
+import Routes from './routes/routes';
 
 
 
@@ -8,7 +8,7 @@ function App() {
  
   return (
     <>
-    <RoutesPublicAndPrivate/> 
+    <Routes/> 
     </>
   );
 }
