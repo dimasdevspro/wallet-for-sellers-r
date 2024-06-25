@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes as Switch, Route, Navigate } from 'react-router-dom'
+
+import { BrowserRouter as Router, Routes as Switch, Route, redirect } from 'react-router-dom'
 import Home from '../components/pages/Home'
 import Login from '../components/pages/Login'
 import Register from '../components/pages/Register'
@@ -13,20 +14,22 @@ import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
 import { isAuthenticated } from '../auth'
 
-const navigate = Navigate()
 const msgLoginError = 'Incorrect email or password!'
 
 const PrivateRoute = ({ component: Component, ...rest}) => {
     <Route { ...rest} render={props => (
         isAuthenticated() ? (
             <Component { ...props} />
-        ) : (
-            navigate('/', {msgLoginError})
-        )
+        ) : 
+            (
+                redirect("/", {state: {from: props.location}, msgLoginError})
+            )
+        
     )}/>
 }
 
 function Routes(){
+
     return (
 <Router>
     <Navbar/>

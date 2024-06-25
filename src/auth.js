@@ -12,7 +12,8 @@ export const isAuthenticated = (data) => {
             //     console.log(loginFind)
 
             //     }
-            return
+            if (loginFind){return true}else{ return false}
+            
             
 }
 

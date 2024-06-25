@@ -3,11 +3,11 @@ import { isAuthenticated } from '../../auth';
 import LoginForm from '../form/LoginForm';
 import styles from './Login.module.css';
 
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Login(){
 
-    const navigate = Navigate();
+    const navigate = useNavigate();
 
     function getLogin(){
         fetch('http://localhost:5000/seller', {
