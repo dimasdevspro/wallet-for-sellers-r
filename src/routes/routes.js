@@ -40,7 +40,7 @@ function Routes(){
         <Route path='/register' element={<Register/>}/>
         <Route path='/company' element={<App1/>}/>
         <Route path='/contact' element={<Contact/>}/>
-        <PrivateRoute path='/logon' element={<Logon/>}/>
+        <Route path='/logon' element={<Logon/>}/>
         <Route path='/costumers' element={<Costumers/>}/>
         <Route path='/costumer-info' element={<CostumerInfo/>}/>
         <Route path='/costumer-add' element={<CostumerAdd/>}/>
