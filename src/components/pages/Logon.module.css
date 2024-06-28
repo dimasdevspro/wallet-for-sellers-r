@@ -35,6 +35,12 @@
     font-weight: bold;
 }
 
+.img_logon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
 .form {
     display: flex;
     justify-content: center;

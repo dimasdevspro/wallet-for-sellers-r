@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom';
 function Logon() {
     return(
         <div className={styles.div_father}>
+            <Link to='/login' className={styles.img_logon}>
+                <img src={Seller} alt='Costumers'/>
+                <p>Logout</p>
+            </Link>
             <form method='' action='' className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Seller</h1>
