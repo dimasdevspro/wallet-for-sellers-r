@@ -8,6 +8,10 @@ import styles from './Costumers.module.css'
 function Costumers(){
     return (
         <div className={styles.div_father}>
+            <Link to='/logon' className={styles.img_logon}>
+                <img src={Seller} alt='Costumers'/>
+                <p>Central</p>
+            </Link>
             <form method='' action='' className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Seller</h1>
