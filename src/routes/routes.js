@@ -1,4 +1,4 @@
-
+import React from 'react'
 import { BrowserRouter as Router, Routes as Switch, Route, redirect } from 'react-router-dom'
 import Home from '../components/pages/Home'
 import Login from '../components/pages/Login'
@@ -22,7 +22,7 @@ const PrivateRoute = ({ component: Component, ...rest}) => {
             <Component { ...props} />
         ) : 
             (
-                redirect("/", {state: {from: props.location}, msgLoginError})
+                redirect("/login", {state: {from: props.location}, msgLoginError})
             )
         
     )}/>

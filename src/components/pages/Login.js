@@ -18,9 +18,9 @@ function Login(){
         })
         .then((resp) => resp.json())
         .then((data) => {
-            isAuthenticated(data)
+            const auth = isAuthenticated(data)
 
-            navigate("/logon")
+           auth ? navigate("/logon", {data}) : navigate("/login")
 
         })
         .catch(err => console.log(err))
