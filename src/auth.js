@@ -7,7 +7,6 @@ export const isAuthenticated = (data) => {
             
             if (loginFind && passwordFind) {
                 console.log("Login sucessfuly!")  
-                console.log(loginFind)
                 return true         
             }else {
                 console.log("Login or password is wrong!") 
