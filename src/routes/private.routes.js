@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes as Switch, Route, redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom'
 import Home from '../components/pages/Home'
 import Login from '../components/pages/Login'
 import Register from '../components/pages/Register'
@@ -12,23 +12,8 @@ import CostumerAdd from '../components/pages/CostumerAdd'
 import Navbar from '../components/layout/Navbar'
 import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
-import { isAuthenticated } from '../auth'
 
-const msgLoginError = 'Incorrect email or password!'
-
-const PrivateRoute = ({ component: Component, ...rest}) => {
-    <Route { ...rest} render={props => (
-        isAuthenticated() ? (
-            <Component { ...props} />
-        ) : 
-            (
-                redirect("/login", {state: {from: props.location}, msgLoginError})
-            )
-        
-    )}/>
-}
-
-function Routes(){
+function PrivateRoutes(){
 
     return (
 <Router>
@@ -50,4 +35,4 @@ function Routes(){
     )
 }
 
-export default Routes
+export default PrivateRoutes
