@@ -13,9 +13,10 @@ function Logon() {
 
     const { auth, setAuth } = useContext(AuthContext)
 
+    const logout = document.addEventListener('click', () => setAuth(false))
     return(
         <div className={styles.div_father}>
-            <Link to={"/login"} className={styles.img_logon}>
+            <Link to={"/login"} onClick={logout} className={styles.img_logon}>
                 <img src={Seller} alt='Costumers'/>
                 <p>Logout</p>
             </Link>
