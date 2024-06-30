@@ -8,8 +8,7 @@ import { AuthContext } from '../../context/AuthContext';
 function Login(){
 
     const {setAuth, auth} = useContext(AuthContext)
-    console.log('auth1', auth)
-
+    
     const navigate = useNavigate();
 
     function getLogin(){
@@ -29,11 +28,9 @@ function Login(){
         if (loginFind && passwordFind) {
             setAuth(true)
             console.log("Login sucessfuly!")
-            navigate("/logon")
-            return true         
+            navigate("/logon")     
         }else {
             console.log("Login or password is wrong!") 
-            return false
             }    
         })
         .catch(err => console.log(err))
