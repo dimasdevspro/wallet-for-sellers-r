@@ -1,7 +1,6 @@
 import AddCostumer from '../../img/Addcostumers.svg';
 import Save from '../../img/save.svg';
 import Costumers from '../../img/Costumers.svg';
-import Seller from '../../img/login.svg'
 
 import styles from './CostumerAdd.module.css';
 
@@ -10,10 +9,6 @@ import { Link } from 'react-router-dom';
 function CostumerAdd(){
     return(
         <div className={styles.container}>
-            <Link to='/logon' className={styles.img_logon}>
-                    <img src={Seller} alt='Costumers'/>
-                    <p>Central</p>
-            </Link>
             <div className={styles.header}>
                 <img src={AddCostumer} alt='add costumer'/>
                 <h1>Add Costumer</h1>

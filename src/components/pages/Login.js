@@ -29,8 +29,7 @@ function Login(){
         if (loginFind && passwordFind) {
             setAuth(true)
             console.log("Login sucessfuly!")
-            navigate("/logon")  
-            console.log('auth2', auth)
+            navigate("/logon")
             return true         
         }else {
             console.log("Login or password is wrong!") 
