@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import AuthProvider, { AuthContext } from './context/AuthContext'
+import React, { useContext } from 'react';
+import { AuthContext } from './context/AuthContext'
 
 import PublicRoutes from './routes/public.routes';
 import PrivateRoutes from './routes/private.routes';
