@@ -9,8 +9,9 @@ function Navbar(){
 
     const { auth, setAuth } = useContext(AuthContext)
 
-    const logout = document.addEventListener('click', () => setAuth(false))
-
+    const logout = () => {
+        setAuth(!auth)
+    }
     return (
         <nav className={styles.navbar}>
                 <img src={wallet} alt='wallet'/>

@@ -18,6 +18,9 @@ li {
 a {
     font-weight: bold;
 }
+#logout {
+    display:flex;
+}
 
 @media (max-width: 432px) {
     .navbar {

@@ -1,6 +1,5 @@
 import styles from './Logon.module.css';
 
-import Logout from '../../img/Button2.svg'
 import Seller from '../../img/login.svg'
 import Costumers from '../../img/Costumers.svg'
 import Addcostumers from '../../img/Addcostumers.svg'
