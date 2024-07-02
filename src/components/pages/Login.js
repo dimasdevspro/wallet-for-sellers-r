@@ -28,9 +28,9 @@ function Login(){
         if (loginFind && passwordFind) {
             setAuth(true)
             console.log("Login sucessfuly!")
-            navigate("/logon")     
+            navigate("/logon", {state:data})     
         }else {
-            console.log("Login or password is wrong!") 
+            navigate("/login", {state:"Login or email incorrect!"})
             }    
         })
         .catch(err => console.log(err))
