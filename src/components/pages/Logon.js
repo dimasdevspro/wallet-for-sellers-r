@@ -23,7 +23,7 @@ function Logon() {
             <form method='' action='' className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Seller</h1>
-                <p>{dataUser[0].name}</p>
+                <h2>{dataUser[0].name}</h2>
             <div className={styles.div_son}>
                 <Link to='/costumers'>
                     <img src={Costumers} alt='Costumers'/>
