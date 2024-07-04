@@ -27,7 +27,6 @@ function Login(){
             
         if (loginFind && passwordFind) {
             setAuth(true)
-            console.log("Login sucessfuly!")
             navigate("/logon", {state:data})     
         }else {
             navigate("/login", {state:"Login or email incorrect!"})
