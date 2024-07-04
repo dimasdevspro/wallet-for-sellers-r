@@ -1,27 +1,37 @@
+import { useLocation } from "react-router-dom";
+
 import { Link } from "react-router-dom"
 
 import Seller from '../../img/login.svg'
 import AddCostumer from '../../img/Addcostumers.svg';
+import Costumer from "../form/Costumer";
 
 import styles from './Costumers.module.css'
 
 function Costumers(){
+
+    const {state} = useLocation()
+    let dataUser = state
+    let costumers = dataUser.costumers
+    
     return (
         <div className={styles.div_father}>
             <form method='' action='' className={styles.form}>
                 <img src={Seller} alt="seller"/>
-                <h1>Seller</h1>
-                <label className={styles.sr_only} for='seller'>Seller</label>
-                <input type='text' name='seller' id='seller'/>
+                <h1>Costumers</h1>
                 <label className={styles.sr_only} for='search-costumers'>search</label>
                 <input type="text" name="search-costumers" placeholder="Search your costumer" id={styles.input_search}/>
-                <div>
-                    <Link to=''>
-                    <label className={styles.sr_only} for='costumer'>Costumer</label>
-                    <img src={Seller} alt="seller" id={styles.costumer_img}/>
-                    <input type="text" name="costumer"/>
-                    </Link>
-                </div>
+                <h4>
+                {
+                        dataUser.costumers.length === 0 ? 
+                        <h4>Dont exist costumers in your wallet...</h4> : 
+                        costumers.map((costumer) => 
+                        <Costumer 
+                        id={costumer.id} 
+                        name={costumer.name}
+                        />)
+                     }
+                </h4>
                 <div className={styles.link_add_costumer}>
                     <Link to='/costumer-add'>
                     <img src={AddCostumer} alt=''/>
