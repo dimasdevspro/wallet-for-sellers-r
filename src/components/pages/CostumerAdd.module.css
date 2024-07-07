@@ -1,6 +1,5 @@
 .container {
     margin: 0 auto;
-    //width: 21em;
     height: 60vh;
     display: block;
     position: relative;
@@ -24,69 +23,4 @@
 
 .header h1 {
     text-align: center
-}
-
-.form {
-    position: relative;
-    width: 21em;
-    margin: 0 auto;
-    display: grid;
-
-}
-
-.form button {
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-
-}
-
-.buttons_form {
-    justify-self: right;
-    display: flex;
-}
-
-.form img {
-    width: 3em;
-    height: 3em;
-}
-
-.input {
-    display: flex;
-}
-
-.input input {
-    background-color: #ededed;
-    border: none;
-    margin: 0.5em;
-}
-
-.input p {
-    color: #2C6871;
-    font-weight: bold;
-}
-
-.text_area {
-    display: flex;
-    background-color: #ededed;
-    border: none;
-    margin: 0.5em;
-    width: 16em;
-    height: 8.5em;
-}
-
-.text_area, .input {
-    justify-content: right;
-}
-
-.sr_only {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
 }

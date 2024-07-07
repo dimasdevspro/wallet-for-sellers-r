@@ -1,0 +1,25 @@
+
+.form {
+    position: relative;
+    width: 21em;
+    margin: 0 auto;
+    display: grid;
+
+}
+
+.form button {
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+
+}
+
+.form img {
+    width: 3em;
+    height: 3em;
+}
+
+.buttons_form {
+    justify-self: right;
+    display: flex;
+}

@@ -1,0 +1,18 @@
+.input {
+    display: flex;
+}
+
+.input p {
+    color: #2C6871;
+    font-weight: bold;
+}
+
+.text_area {
+    display: flex;
+    background-color: #ededed;
+    border: none;
+    margin: 0.5em;
+    width: 16em;
+    height: 8.5em;
+    justify-content: right;
+}

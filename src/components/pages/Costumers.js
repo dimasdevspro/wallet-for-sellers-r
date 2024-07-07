@@ -19,12 +19,12 @@ function Costumers(){
             <form method='' action='' className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Costumers</h1>
-                <label className={styles.sr_only} for='search-costumers'>search</label>
+                <label className={styles.sr_only} htmlFor='search-costumers'>search</label>
                 <input type="text" name="search-costumers" placeholder="Search your costumer" id={styles.input_search}/>
                 <h4>
                 {
                         dataUser.costumers.length === 0 ? 
-                        <h4>Dont exist costumers in your wallet...</h4> : 
+                        "Dont exist costumers in your wallet..." : 
                         costumers.map((costumer) => 
                         <Costumer 
                         id={costumer.id} 
@@ -33,7 +33,7 @@ function Costumers(){
                      }
                 </h4>
                 <div className={styles.link_add_costumer}>
-                    <Link to='/costumer-add'>
+                    <Link to='/seller/:id' state={dataUser}>
                     <img src={AddCostumer} alt=''/>
                     </Link>
                 </div>

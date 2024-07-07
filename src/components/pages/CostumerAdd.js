@@ -1,50 +1,41 @@
+import { v4 as uuidv4 } from 'uuid'
+import { useState } from 'react';
 import AddCostumer from '../../img/Addcostumers.svg';
-import Save from '../../img/save.svg';
-import Costumers from '../../img/Costumers.svg';
+import CostumerAddForm from '../form/CostumerAddForm';
 
 import styles from './CostumerAdd.module.css';
-
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function CostumerAdd(){
+
+    const {state} = useLocation()
+    const dataUser = state
+
+    function createCostumer(costumer){
+
+       dataUser.costumers.push(costumer)
+
+        fetch(`http://localhost:5000/seller/${dataUser.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-type': 'application/json'
+            }, 
+            body: JSON.stringify(dataUser)
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data)
+        })
+        .catch(err => console.log(err))
+        
+    }
     return(
         <div className={styles.container}>
             <div className={styles.header}>
                 <img src={AddCostumer} alt='add costumer'/>
                 <h1>Add Costumer</h1>
             </div>
-        <form method="" action="" className={styles.form}>
-            <div className={styles.input}>
-                <label className={styles.sr_only} for="name-costumer">Name</label>
-                <p>Name</p>
-                <input type="text" name="name-costumeer" placeholder="insert to your name" required/>
-            </div>
-            <div className={styles.input}>
-                <label className={styles.sr_only} for="email-costumer">Email</label>
-                <p>Email</p>
-                <input type="email" name="email-costumer" placeholder="insert to your email" required/>
-            </div>    
-            <div className={styles.input}>
-                <label className={styles.sr_only} for="phone-costumer">Phone</label>
-                <p>Phone</p>
-                <input type="tel" name="phone-costumer" id="phone-costumer" 
-                        placeholder='input your phone or cel'
-                        />
-            </div>
-            <div className={styles.input}>
-                <p>Informations</p>
-                <textarea name="informations" id="infos" className={styles.text_area}></textarea>
-            </div>
-            <div className={styles.buttons_form}>
-                <Link to='/costumers'>
-                    <img src={Costumers} alt='Costumers'/>
-                </Link>
-                <button >
-                    <img src={Save} alt="Button for save new costumer"/>
-                </button>
-            </div>
-                
-        </form>
+        <CostumerAddForm handleSubmit={createCostumer}/>
         </div>
     )
 }
