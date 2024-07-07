@@ -25,7 +25,7 @@ function CostumerAddForm({handleSubmit, customerData}) {
     }
 
     return (
-        <form onSubmit={submit} className={styles.form}>
+        <form id="CostumerAddForm" onSubmit={submit} className={styles.form}>
             <Input
             text='Name'
             type='text'
@@ -52,6 +52,7 @@ function CostumerAddForm({handleSubmit, customerData}) {
             />   
             <TextArea
             name='Informations'
+            form="CostumerAddForm"
             />
             <div className={styles.buttons_form}>
                 <Link to='/costumers' state={dataUser}>
