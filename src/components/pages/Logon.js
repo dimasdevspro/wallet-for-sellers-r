@@ -22,7 +22,7 @@ function Logon() {
                     <img src={Costumers} alt='Costumers'/>
                     <p>Costumers</p>
                 </Link>
-                <Link to='/seller/:id' state={dataUser}>
+                <Link to='/costumer-add' state={dataUser}>
                     <img src={Addcostumers} alt='Add costumers'/>
                     <p>Add Costumer</p>
                 </Link>

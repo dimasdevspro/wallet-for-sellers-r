@@ -27,8 +27,8 @@ function PrivateRoutes(){
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/logon' element={<Logon/>}/>
         <Route path='/costumers' element={<Costumers/>}/>
-        <Route path='/seller/:id' element={<CostumerInfo/>}/>
-        <Route path='/seller/:id' element={<CostumerAdd/>}/>
+        <Route path='/costumer-info' element={<CostumerInfo/>}/>
+        <Route path='/costumer-add' element={<CostumerAdd/>}/>
     </Switch>
     <Footer/>
 </Router>

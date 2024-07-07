@@ -33,7 +33,7 @@ function Costumers(){
                      }
                 </div>
                 <div className={styles.link_add_costumer}>
-                    <Link to='/seller/:id' state={dataUser}>
+                    <Link to='/costumer-add' state={dataUser}>
                     <img src={AddCostumer} alt=''/>
                     </Link>
                 </div>

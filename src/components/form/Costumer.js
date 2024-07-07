@@ -11,7 +11,7 @@ function Costumer({id, name}){
         <div>
             <Link
             className={styles.link_costumer} 
-            to={`/seller/${dataUser.id}`} 
+            to='/costumer-info' 
             state={
                 costumers.find(costumer => costumer.id === id)
             }>
