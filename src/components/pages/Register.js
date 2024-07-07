@@ -23,7 +23,6 @@ function Register(){
         })
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data)
             //redirect
             const state = {message: "Seller created successfully!"}
             navigate("/login", {state})

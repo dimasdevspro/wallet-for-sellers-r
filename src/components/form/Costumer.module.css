@@ -1,12 +1,5 @@
 .link_costumer {
     display: flex;
-    width: 4em;
-    height: 2em;
+    width: 20em;
     background-color: #ededed;
-}
-
-.link_costumer svg {
-    width: 30px;
-    height: 30px;
-    color: #2c6871;
 }

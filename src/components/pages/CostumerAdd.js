@@ -12,7 +12,7 @@ function CostumerAdd(){
     const dataUser = state
 
     function createCostumer(costumer){
-
+       costumer.id = uuidv4()
        dataUser.costumers.push(costumer)
 
         fetch(`http://localhost:5000/seller/${dataUser.id}`, {

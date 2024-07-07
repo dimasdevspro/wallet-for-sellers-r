@@ -21,7 +21,7 @@ function Costumers(){
                 <h1>Costumers</h1>
                 <label className={styles.sr_only} htmlFor='search-costumers'>search</label>
                 <input type="text" name="search-costumers" placeholder="Search your costumer" id={styles.input_search}/>
-                <h4>
+                <div>
                 {
                         dataUser.costumers.length === 0 ? 
                         "Dont exist costumers in your wallet..." : 
@@ -31,7 +31,7 @@ function Costumers(){
                         name={costumer.name}
                         />)
                      }
-                </h4>
+                </div>
                 <div className={styles.link_add_costumer}>
                     <Link to='/seller/:id' state={dataUser}>
                     <img src={AddCostumer} alt=''/>
