@@ -12,7 +12,7 @@ function Login(){
     const navigate = useNavigate();
 
     function getLogin(){
-        fetch('http://localhost:5000/seller', {
+        fetch('http://localhost:5000/seller/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -25,10 +25,21 @@ function Login(){
             const loginFind = data.find(seller => seller.login === loginInput)
             const passwordFind = data.find(seller => seller.password === passwordInput)
             
-        if (loginFind && passwordFind) {
-            setAuth(true)
-            navigate("/logon", {state:data})     
-        }else {
+            if (loginFind && passwordFind) {
+                fetch(`http://localhost:5000/seller/${loginFind.id}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-type': 'application/json'
+                    }
+                })
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setAuth(true)
+                    navigate("/logon", {state:data})     
+
+                })
+            }
+            else {
             navigate("/login", {state:"Login or email incorrect!"})
             }    
         })

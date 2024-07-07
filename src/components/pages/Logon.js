@@ -9,7 +9,8 @@ import Addcostumers from '../../img/Addcostumers.svg'
 function Logon() {
 
     const {state} = useLocation()
-    let dataUser = state[0]
+    let dataUser = state
+    console.log(state)
         
     return(
         <div className={styles.div_father}>

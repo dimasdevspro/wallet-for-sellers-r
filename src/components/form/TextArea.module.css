@@ -16,3 +16,17 @@
     height: 8.5em;
     justify-content: right;
 }
+
+
+.sr_only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
