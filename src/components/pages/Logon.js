@@ -10,7 +10,6 @@ function Logon() {
 
     const {state} = useLocation()
     let dataUser = state
-    console.log(state)
         
     return(
         <div className={styles.div_father}>

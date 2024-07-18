@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom"
 
@@ -9,11 +9,27 @@ import Costumer from "../form/Costumer";
 import styles from './Costumers.module.css'
 
 function Costumers(){
-
+    const navigate = useNavigate()
     const {state} = useLocation()
-    let dataUser = state
-    let costumers = dataUser.costumers
-    
+    const dataUserLogged = state
+    const costumers = dataUserLogged.costumers
+
+    function getCostumerAdd(){
+
+        fetch(`http://localhost:5000/seller/${dataUserLogged.id}`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            const dataUser = data
+            navigate('/costumer-add', {state: dataUser})
+        })
+        .catch(err => console.log(err))
+    }
+
     return (
         <div className={styles.div_father}>
             <form method='' action='' className={styles.form}>
@@ -23,7 +39,7 @@ function Costumers(){
                 <input type="text" name="search-costumers" placeholder="Search your costumer" id={styles.input_search}/>
                 <div>
                 {
-                        dataUser.costumers.length === 0 ? 
+                        costumers.length === 0 ? 
                         "Dont exist costumers in your wallet..." : 
                         costumers.map((costumer) => 
                         <Costumer 
@@ -31,12 +47,13 @@ function Costumers(){
                         name={costumer.name}
                         />)
                      }
-                </div>
                 <div className={styles.link_add_costumer}>
-                    <Link to='/costumer-add' state={dataUser}>
+                    <Link onClick={getCostumerAdd}>
                     <img src={AddCostumer} alt=''/>
                     </Link>
                 </div>
+                </div>
+                
             </form>
             
         </div>
