@@ -27,6 +27,34 @@
           "id": "ad070db6-c2cb-48d5-a826-502a253b61b4"
         }
       ]
+    },
+    {
+      "id": "c8a1",
+      "name": "Dimas Alves Pereira",
+      "email": "dimasdevspro@gmail.com",
+      "phone": "11932228112",
+      "login": "dimasdevspro@gmail.com",
+      "password": "123",
+      "costumers": [
+        {
+          "name": "Salvio",
+          "email": "salvio@sal.com.br",
+          "phone": "1132221544",
+          "id": "a9e1284b-0723-40d4-98de-cfed6a64b17b"
+        },
+        {
+          "name": "Santos santos",
+          "email": "santos@click.com",
+          "phone": "1189897171",
+          "id": "66d1f654-3b0e-4ed8-8a68-8a99956c0406"
+        },
+        {
+          "name": "Silvio Saca",
+          "email": "silvio@saca.com",
+          "phone": "11952328178",
+          "id": "1319050f-8998-4a0d-aa33-73c5319d4f26"
+        }
+      ]
     }
   ]
 }

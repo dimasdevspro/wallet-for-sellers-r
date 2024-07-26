@@ -1,3 +1,4 @@
+
 import { useLocation } from "react-router-dom";
 
 import { Link } from "react-router-dom"
@@ -8,60 +9,69 @@ import Costumer from "../form/Costumer";
 import Input from "../form/Input"
 
 import styles from './Costumers.module.css'
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Costumers(){
     const {state} = useLocation()
     const dataUserLogged = state
     const costumers = dataUserLogged.costumers
+    const [query, setQuery] = useState('')
+    const [results, setResults] = useState([])
 
-    const submit = (e) => {
-        e.preventDefault()
+    const handleSearch = (e) => {
+        const query = e.target.value
+        setQuery(query)
     }
-       
-    function filterCustomer(){
-        fetch(`http://localhost:5000/seller/${dataUserLogged.id}`, {
-            method: "GET",
+    
+        useEffect(() => {
+            if (query !== '') {
+                fetch(`http://localhost:5000/seller/${dataUserLogged.id}/?q=${query}`,{
+            method: 'GET',
             headers: {
-                'Content-type': 'application/json'
+                'Content-type':"application/json"
             }
-        })
-        .then((resp) => resp.json())
-        .then((data) => {
-            const costumers = data.costumers
-            const search = document.getElementById('search').value
-            const costumerFiltered = costumers.filter(costumer => costumer.name.includes(search))
-            costumerFiltered && (
-                <Costumer
-                id={costumerFiltered.id}
-                name={costumerFiltered.name}
-                />)
-        })
-        .catch((err) => console.log(err))
-    }
-
+            })
+            .then(resp => resp.json())
+            .then((data) => {
+                setResults(data.costumers)
+                console.log(results)
+            })
+            .catch(error => { console.error('Error fetching data:', error)})
+            }else {
+                setResults([])
+            }
+        }, [query])
+        
+         
+    
     return (
         <div className={styles.div_father}>
-            <form onSubmit={submit} className={styles.form}>
+            <div className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Costumers</h1>
                 <Input
-                type="search"
+                type="text"
+                value={query}
+                handleOnChange={handleSearch}
                 name="search"
-                placeholder="Search your costumer"
-                                
+                placeholder="Search your costumer"                               
                 />
-                <button onClick={filterCustomer}>Procurar</button>
                 <div>
-                    {
-                        costumers.length === 0 ? 
-                        "Dont exist costumers in your wallet..." : 
-                        costumers.map((costumer) => 
-                        <Costumer 
-                        id={costumer.id} 
-                        name={costumer.name}
-                        />)                        
-                    }
+                  {
+                    results.length === 0 ? 
+                    costumers.map((costumer) =>
+                    <Costumer
+                    id={costumer.id}
+                    name={costumer.name}
+                    />
+                    )
+                     : 
+                    results.map((result) => 
+                    <Costumer 
+                    id={result.id} 
+                    name={result.name}
+                    />)            
+                  }  
                 <div className={styles.link_add_costumer}>
                     <Link to='/costumer-add' state={dataUserLogged}>
                     <img src={AddCostumer} alt=''/>
@@ -69,7 +79,7 @@ function Costumers(){
                 </div>
                 </div>
                 
-            </form>
+            </div>
             
         </div>
     )
