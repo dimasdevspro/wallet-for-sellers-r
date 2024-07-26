@@ -34,17 +34,20 @@ function Costumers(){
                 handleOnChange={(e) => setQuery(e.target.value)}
                 name="search"
                 placeholder="Search your costumer"
-                key='search'                              
+                key={query}                              
                 />
                 <div>
                   {
                     costumersFiltered.length === 0 ?
                     <h4>"You havent costumer in your wallet..."</h4> :
                      costumersFiltered.map((costumer) =>
+                    <Link to='/costumer-info' state={costumer}>
                     <Costumer
                     id={costumer.id}
                     name={costumer.name}
-                    />)         
+                    />
+                    </Link>
+                    )         
                   }  
                 <div className={styles.link_add_costumer}>
                     <Link to='/costumer-add' state={dataUserLogged}>

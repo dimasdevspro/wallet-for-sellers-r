@@ -2,7 +2,6 @@ import Save from '../../img/save.svg';
 import Costumers from '../../img/Costumers.svg';
 
 import Input from './Input';
-import TextArea from './TextArea';
 import styles from './CostumerAddForm.module.css';
 
 import { Link, useLocation } from 'react-router-dom';
@@ -27,7 +26,7 @@ function CostumerAddForm({handleSubmit, costumerData}) {
     }
 
     return (
-        <form name='informations' id='informations' onSubmit={submit} className={styles.form}>
+        <form onSubmit={submit} className={styles.form}>
             <Input
             text='Name'
             type='text'

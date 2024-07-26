@@ -1,0 +1,18 @@
+.costumer {
+    display: flex;
+    width: 20em;
+    margin: 0 auto;
+    background-color: #ededed;
+    flex-direction: column;
+}
+
+.costumer h4 {
+    margin: 0.5em;
+}
+
+.button_edit {
+    position: absolute;
+    rigth: 0;
+    width: 2em;
+}
+
