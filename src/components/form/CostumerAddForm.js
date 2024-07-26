@@ -8,31 +8,33 @@ import styles from './CostumerAddForm.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
-function CostumerAddForm({handleSubmit, customerData}) {
+function CostumerAddForm({handleSubmit, costumerData}) {
 
     const {state} = useLocation()
     const dataUser = state
 
-    const [customer, setCustomer ] =  useState(customerData || {})
+    const [costumer, setCostumer ] =  useState(costumerData || {})
 
     const submit = (e) => {
         e.preventDefault()
-        handleSubmit(customer)
+        handleSubmit(costumer)
+        setCostumer({})
+        costumer.infomations = ''
     }
 
     function handleChange(e) {
-        setCustomer({...customer, [e.target.name]: e.target.value})
+        setCostumer({...costumer, [e.target.name]: e.target.value})
     }
 
     return (
-        <form name='costumeraddform' id='costumeraddform' onSubmit={submit} className={styles.form}>
+        <form name='informations' id='informations' onSubmit={submit} className={styles.form}>
             <Input
             text='Name'
             type='text'
             name='name'
             placeholder='insert name by costumer'
             handleOnChange={handleChange}
-            value={customer.name ? customer.name : ''}
+            value={costumer.name || ''}
             />
             <Input
             text='Email'
@@ -40,7 +42,7 @@ function CostumerAddForm({handleSubmit, customerData}) {
             name='email'
             placeholder='insert email by costumer'
             handleOnChange={handleChange}
-            value={customer.email ? customer.email : ''}
+            value={costumer.email || ''}
             />
             <Input
             text='Phone'
@@ -48,13 +50,15 @@ function CostumerAddForm({handleSubmit, customerData}) {
             name='phone'
             placeholder='insert phone by costumer'
             handleOnChange={handleChange}
-            value={customer.phone ? customer.phone : ''}
-            />   
-            <TextArea
-            text='Informations'
-            name='informations'
-            id='informations'
-            form='costumeraddform'
+            value={costumer.phone || ''}
+            />
+            <Input
+            text="Company"
+            type='text'
+            name='company'
+            placeholder='insert name by company'
+            handleOnChange={handleChange}
+            value={costumer.company || ''}   
             />
             <div className={styles.buttons_form}>
                 <Link to='/costumers' state={dataUser}>
