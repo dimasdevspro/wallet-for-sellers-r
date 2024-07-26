@@ -1,6 +1,6 @@
 import styles from './Input.module.css';
 
-function Input({type, text, name, placeholder, handleOnChange, value, id}){
+function Input({type, text, name, placeholder, handleOnChange, value}){
     return (
         <div className={styles.input}>
             <label htmlFor={name} className={styles.sr_only}>{text}</label>
@@ -8,7 +8,7 @@ function Input({type, text, name, placeholder, handleOnChange, value, id}){
             <input 
             type={type}
             name={name}
-            id={id} 
+            id={name} 
             placeholder={placeholder}
             onChange={handleOnChange}
             value={value}
