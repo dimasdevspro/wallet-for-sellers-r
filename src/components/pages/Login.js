@@ -12,7 +12,7 @@ function Login(){
     const navigate = useNavigate();
 
     function getLogin(){
-        fetch('http://localhost:5000/seller/', {
+        fetch('https://server-e-wallet.vercel.app/seller/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
