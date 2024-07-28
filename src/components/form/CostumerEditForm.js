@@ -1,30 +1,27 @@
-import Save from '../../img/save.svg';
-import Costumers from '../../img/Costumers.svg';
+import styles from './CostumerEditForm.module.css'
 
-import Input from './Input';
-import styles from './CostumerAddForm.module.css';
+import Save from '../../img/save.svg'
+import Delete from '../../img/delete.svg'
 
-import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import Input from '../form/Input'
 
-function CostumerAddForm({handleSubmit, costumerData}) {
+import { useState } from 'react'
 
-    const {state} = useLocation()
-    const dataUser = state
+function CostumerEditForm({handleSubmitEdit, handleSubmitDelete, CostumerEditedData, costumer }){
 
-    const [costumer, setCostumer ] =  useState(costumerData || {})
+    const [costumerEdited, setCostumerEdited ] =  useState(CostumerEditedData || {})
 
     const submit = (e) => {
         e.preventDefault()
-        handleSubmit(costumer)
-        setCostumer({})
+        handleSubmitEdit(costumerEdited)
     }
 
     function handleChange(e) {
-        setCostumer({...costumer, [e.target.name]: e.target.value})
+        setCostumerEdited({[e.target.name]: e.target.value})
     }
 
-    return (
+     return(
+       
         <form onSubmit={submit} className={styles.form}>
             <Input
             text='Name'
@@ -59,16 +56,17 @@ function CostumerAddForm({handleSubmit, costumerData}) {
             value={costumer.company || ''}   
             />
             <div className={styles.buttons_form}>
-                <Link to='/costumers' state={dataUser}>
-                    <img src={Costumers} alt='Costumers'/>
-                </Link>
-                <button >
-                    <img src={Save} alt="Button for save new costumer"/>
+                <button onClick={handleSubmitDelete}>
+                    <img src={Delete} alt="Button for delete costumer"/>
+                </button>
+                <button onClick={handleSubmitEdit}>
+                    <img src={Save} alt="Button for save costumer"/>
                 </button>
             </div>
                 
         </form>
+
     )
 }
 
-export default CostumerAddForm
+export default CostumerEditForm

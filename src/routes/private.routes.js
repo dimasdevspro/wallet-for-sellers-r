@@ -9,6 +9,7 @@ import Logon from '../components/pages/Logon'
 import Costumers from '../components/pages/Costumers'
 import CostumerInfo from '../components/pages/CostumerInfo'
 import CostumerAdd from '../components/pages/CostumerAdd'
+import CostumerEdit from '../components/pages/CostumerEdit'
 import Navbar from '../components/layout/Navbar'
 import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
@@ -29,6 +30,7 @@ function PrivateRoutes(){
         <Route path='/costumers' element={<Costumers/>}/>
         <Route path='/costumer-info' element={<CostumerInfo/>}/>
         <Route path='/costumer-add' element={<CostumerAdd/>}/>
+        <Route path='/costumer-edit' element={<CostumerEdit/>}/>
     </Switch>
     <Footer/>
 </Router>

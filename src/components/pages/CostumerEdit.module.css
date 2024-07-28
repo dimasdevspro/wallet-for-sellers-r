@@ -1,0 +1,28 @@
+.container {
+    margin: 0 auto;
+    height: 60vh;
+    display: block;
+    position: relative;
+    padding: 1em 0;
+}
+
+.img_logon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+}
+
+.header {
+    display: grid;
+    margin: 1em auto;
+    width: 21em;
+}
+
+.header img {
+    justify-self: center;
+}
+
+.header h1 {
+    text-align: center
+}
