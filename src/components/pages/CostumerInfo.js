@@ -18,9 +18,11 @@ function CostumerInfo(){
             phone={costumer.phone}
             company={costumer.company}
             />
-            <Link to="/costumer-edit" state={costumer} className={styles.button_edit}>
+            <div className={styles.costumer_link}>
+            <Link to="/costumer-edit" state={costumer}>
                 <img src={Edit} alt="" />
             </Link>
+            </div>
         </div>
         
     )

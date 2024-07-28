@@ -1,4 +1,4 @@
-import styles from './CostumerInfo.module.css'
+import styles from './CostumerInfos.module.css'
 
 function CostumerInfos({id, name, email, phone, company}){
     return(

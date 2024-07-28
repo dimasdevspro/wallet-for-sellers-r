@@ -54,9 +54,11 @@
 }
 
 .link_add_costumer img {
+    position: absolute;
     margin-top: .5em;
     width: 3em;
     height: 3em;
+    right: 0;
 }
 
 .sr_only {

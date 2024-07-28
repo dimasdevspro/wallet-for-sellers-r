@@ -10,3 +10,16 @@
     width: 6.25em;
     height: 6.25em;
 }
+
+.costumer_link {
+    position: relative;
+    width: 20em;
+}
+
+.costumer a img {
+    position: absolute;
+    right: 0;
+    height: 3em;
+    width: 3em;
+    margin-top: 0.5em;
+}
