@@ -14,7 +14,7 @@ function CostumerAdd(){
        costumer.id = uuidv4()
        dataUser.costumers.push(costumer)
 
-        fetch(`http://localhost:5000/seller/${dataUser.id}`, {
+        fetch(`https://server-e-wallet.vercel.app/seller/${dataUser.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

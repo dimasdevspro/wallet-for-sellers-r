@@ -12,7 +12,7 @@ function CostumerEdit(){
     function editCostumer(){
 
 
-        fetch("http://localhost:5000/seller/", {
+        fetch("https://server-e-wallet.vercel.app/seller/", {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

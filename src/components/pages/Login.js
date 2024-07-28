@@ -26,7 +26,7 @@ function Login(){
             const passwordFind = data.find(seller => seller.password === passwordInput)
             
             if (loginFind && passwordFind) {
-                fetch(`http://localhost:5000/seller/${loginFind.id}`, {
+                fetch(`https://server-e-wallet.vercel.app/seller/${loginFind.id}`, {
                     method: 'GET',
                     headers: {
                         'Content-type': 'application/json'

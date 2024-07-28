@@ -14,7 +14,7 @@ function Register(){
 
         seller.costumers = []
 
-        fetch('http://localhost:5000/seller', {
+        fetch('https://server-e-wallet.vercel.app/seller', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
