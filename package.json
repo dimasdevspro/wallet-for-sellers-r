@@ -17,8 +17,7 @@
   },
   "scripts": {
     "backend": "npx json-server --watch db.json --port 5000",
-    "start": "node server.js",
-    "start 2": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
