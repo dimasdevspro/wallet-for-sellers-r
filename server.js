@@ -1,5 +1,6 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const cors = require('cors');  // Importando o pacote CORS
 
 const app = express();
 const uri = "mongodb+srv://dimasdevspro:Fenix369@cluster0.pwq8wax.mongodb.net/e-wallet-server?retryWrites=true&w=majority&appName=Cluster0";
@@ -11,6 +12,9 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   }
 });
+
+// Configurar CORS para permitir todas as origens
+app.use(cors());
 
 async function run() {
   try {

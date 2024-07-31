@@ -12,7 +12,7 @@ function Login(){
     const navigate = useNavigate();
 
     function getLogin(){
-        fetch('https://server-e-wallet.vercel.app/seller/', {
+        fetch('http://localhost:5000/api/sellers', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -26,7 +26,7 @@ function Login(){
             const passwordFind = data.find(seller => seller.password === passwordInput)
             
             if (loginFind && passwordFind) {
-                fetch(`https://server-e-wallet.vercel.app/seller/${loginFind.id}`, {
+                fetch(`https://localhost:5000/api/sellers/${loginFind.id}`, {
                     method: 'GET',
                     headers: {
                         'Content-type': 'application/json'
