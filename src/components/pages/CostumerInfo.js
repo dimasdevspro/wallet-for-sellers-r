@@ -7,7 +7,8 @@ import Edit from '../../img/edit.svg'
 function CostumerInfo(){
 
     const {state} = useLocation()
-    const costumer = state
+    const costumer = state[1]
+    const dataUserLogged = state[0]
     return (
         <div className={styles.costumer}>
             <img src={Seller} alt="Seller"/>
@@ -19,7 +20,7 @@ function CostumerInfo(){
             company={costumer.company}
             />
             <div className={styles.costumer_link}>
-            <Link to="/costumer-edit" state={costumer}>
+            <Link to="/costumer-edit" state={[dataUserLogged, costumer]}>
                 <img src={Edit} alt="" />
             </Link>
             </div>

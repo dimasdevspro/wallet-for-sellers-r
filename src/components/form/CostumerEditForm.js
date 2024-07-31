@@ -5,68 +5,73 @@ import Delete from '../../img/delete.svg'
 
 import Input from '../form/Input'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function CostumerEditForm({handleSubmitEdit, handleSubmitDelete, CostumerEditedData, costumer }){
+function CostumerEditForm({ handleSubmitEdit, handleSubmitDelete, costumer }) {
 
-    const [costumerEdited, setCostumerEdited ] =  useState(CostumerEditedData || {})
+    const [costumerEdited, setCostumerEdited] = useState({});
+
+    useEffect(() => {
+        setCostumerEdited(costumer || {});
+    }, [costumer]);
 
     const submit = (e) => {
-        e.preventDefault()
-        handleSubmitEdit(costumerEdited)
+        e.preventDefault();
+        handleSubmitEdit(costumerEdited);
     }
 
     function handleChange(e) {
-        setCostumerEdited({[e.target.name]: e.target.value})
+        const { name, value } = e.target;
+        setCostumerEdited(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     }
 
-     return(
-       
+    return (
         <form onSubmit={submit} className={styles.form}>
             <Input
-            text='Name'
-            type='text'
-            name='name'
-            placeholder='insert name by costumer'
-            handleOnChange={handleChange}
-            value={costumer.name || ''}
+                text='Name'
+                type='text'
+                name='name'
+                placeholder='Insert customer name'
+                handleOnChange={handleChange}
+                value={costumerEdited.name || ''}
             />
             <Input
-            text='Email'
-            type='email'
-            name='email'
-            placeholder='insert email by costumer'
-            handleOnChange={handleChange}
-            value={costumer.email || ''}
+                text='Email'
+                type='email'
+                name='email'
+                placeholder='Insert customer email'
+                handleOnChange={handleChange}
+                value={costumerEdited.email || ''}
             />
             <Input
-            text='Phone'
-            type='tel'
-            name='phone'
-            placeholder='insert phone by costumer'
-            handleOnChange={handleChange}
-            value={costumer.phone || ''}
+                text='Phone'
+                type='tel'
+                name='phone'
+                placeholder='Insert customer phone'
+                handleOnChange={handleChange}
+                value={costumerEdited.phone || ''}
             />
             <Input
-            text="Company"
-            type='text'
-            name='company'
-            placeholder='insert name by company'
-            handleOnChange={handleChange}
-            value={costumer.company || ''}   
+                text="Company"
+                type='text'
+                name='company'
+                placeholder='Insert company name'
+                handleOnChange={handleChange}
+                value={costumerEdited.company || ''}
             />
             <div className={styles.buttons_form}>
                 <button onClick={handleSubmitDelete}>
-                    <img src={Delete} alt="Button for delete costumer"/>
+                    <img src={Delete} alt="Button for delete customer" />
                 </button>
-                <button onClick={handleSubmitEdit}>
-                    <img src={Save} alt="Button for save costumer"/>
+                <button type="submit">
+                    <img src={Save} alt="Button to save customer" />
                 </button>
             </div>
-                
         </form>
-
-    )
+    );
 }
 
-export default CostumerEditForm
+export default CostumerEditForm;
