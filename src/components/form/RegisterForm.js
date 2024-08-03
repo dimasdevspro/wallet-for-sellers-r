@@ -45,6 +45,14 @@ function RegisterForm({ handleSubmit, sellerData }){
                 />
                 <Input
                 type="text"
+                text="Company"
+                name="company"
+                placeholder="input your company"
+                handleOnChange={handleChange}
+                value={seller.company ? seller.company : ''}
+                />
+                <Input
+                type="text"
                 text="Login"
                 name="login"
                 placeholder="input your email"

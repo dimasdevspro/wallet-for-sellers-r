@@ -14,7 +14,7 @@ function Register(){
 
         seller.costumers = []
 
-        fetch('https://server-e-wallet.vercel.app/seller', {
+        fetch('https://e-wallet-for-sellers-api.vercel.app/sellers/', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
