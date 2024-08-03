@@ -12,7 +12,7 @@ function Login(){
     const navigate = useNavigate();
 
     function getLogin(){
-        fetch('https://server-e-wallet.vercel.app/seller/', {
+        fetch('https://e-wallet-for-sellers-api.vercel.app/sellers/', {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json'
@@ -26,7 +26,7 @@ function Login(){
             const passwordFind = data.find(seller => seller.password === passwordInput)
             
             if (loginFind && passwordFind) {
-                fetch(`https://server-e-wallet.vercel.app/seller/${loginFind.id}`, {
+                fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${loginFind._id}`, {
                     method: 'GET',
                     headers: {
                         'Content-type': 'application/json'
