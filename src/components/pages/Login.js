@@ -2,14 +2,19 @@ import { useContext } from 'react';
 import LoginForm from '../form/LoginForm';
 import styles from './Login.module.css';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import Message from '../layout/Message';
 
 function Login(){
 
     const {setAuth, auth} = useContext(AuthContext)
-    
     const navigate = useNavigate();
+    const location = useLocation()
+    let message = ''
+    if (location.state){
+        message = location.state.message
+    }
 
     function getLogin(){
         fetch('https://e-wallet-for-sellers-api.vercel.app/sellers/', {
@@ -24,7 +29,7 @@ function Login(){
             const passwordInput = document.getElementById("password").value         
             const loginFind = data.find(seller => seller.login === loginInput)
             const passwordFind = data.find(seller => seller.password === passwordInput)
-            
+            console.log(loginFind)
             if (loginFind && passwordFind) {
                 fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${loginFind._id}`, {
                     method: 'GET',
@@ -40,7 +45,7 @@ function Login(){
                 })
             }
             else {
-            navigate("/login", {state:"Login or email incorrect!"})
+            navigate("/login", {message:"Login or email incorrect!"})
             }    
         })
         .catch(err => console.log(err))
@@ -49,6 +54,10 @@ function Login(){
     return (
         <div className={styles.body}>
             <h1>Login´s Seller</h1>
+            {message && (<Message
+            msg={message}
+            type="error"
+            />)}
             <LoginForm handleSubmit={getLogin}/>
         </div>
     )
