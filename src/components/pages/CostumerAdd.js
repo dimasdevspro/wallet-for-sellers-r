@@ -10,12 +10,10 @@ function CostumerAdd(){
     const {state} = useLocation()
     const dataUser = state
 
-
     function createCostumer(costumer){
-        const isCostumerExist = dataUser.costumers.find((costumerDataUser)=> costumerDataUser.emal === costumer.emal )
+        const isCostumerExist = dataUser.costumers.find((costumerDataUser)=> costumerDataUser.email === costumer.email )
         if(!isCostumerExist) {
             costumer.id = uuidv4()
-            dataUser.costumers.push(costumer)
         } else {
             const warningMsg= "Customer is already registered!"
             console.log(warningMsg)
@@ -27,7 +25,7 @@ function CostumerAdd(){
             headers: {
                 'Content-type': 'application/json'
             }, 
-            body: JSON.stringify(dataUser)
+            body: JSON.stringify(costumer)
         })
         .then((resp) => resp.json())
         .then((data) => {

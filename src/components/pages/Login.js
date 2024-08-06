@@ -29,7 +29,6 @@ function Login(){
             const passwordInput = document.getElementById("password").value         
             const loginFind = data.find(seller => seller.login === loginInput)
             const passwordFind = data.find(seller => seller.password === passwordInput)
-            console.log(loginFind)
             if (loginFind && passwordFind) {
                 fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${loginFind._id}`, {
                     method: 'GET',
