@@ -10,9 +10,17 @@ function CostumerAdd(){
     const {state} = useLocation()
     const dataUser = state
 
+
     function createCostumer(costumer){
-       costumer.id = uuidv4()
-       dataUser.costumers.push(costumer)
+        const isCostumerExist = dataUser.costumers.find((costumerDataUser)=> costumerDataUser.emal === costumer.emal )
+        if(!isCostumerExist) {
+            costumer.id = uuidv4()
+            dataUser.costumers.push(costumer)
+        } else {
+            const warningMsg= "Customer is already registered!"
+            console.log(warningMsg)
+            return
+        }
         
         fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUser._id}`, {
             method: 'PATCH',
@@ -23,7 +31,7 @@ function CostumerAdd(){
         })
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data)
+    
         })
         .catch(err => console.log(err))
         
