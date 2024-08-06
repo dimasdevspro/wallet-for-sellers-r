@@ -13,8 +13,8 @@ function CostumerAdd(){
     function createCostumer(costumer){
        costumer.id = uuidv4()
        dataUser.costumers.push(costumer)
-
-        fetch(`https://server-e-wallet.vercel.app/seller/${dataUser.id}`, {
+        
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUser._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'
@@ -23,7 +23,7 @@ function CostumerAdd(){
         })
         .then((resp) => resp.json())
         .then((data) => {
-
+            console.log(data)
         })
         .catch(err => console.log(err))
         

@@ -21,7 +21,12 @@ function Register(){
             },
             body: JSON.stringify(seller)
         })
-        .then((resp) => resp.json())
+        .then((resp) => {
+            if(!resp.ok){
+                return resp.text().then(text => { throw new Error(text)});
+            }    
+            resp.json()
+        })
         .then((data) => {
             //redirect
             const state = {message: "Seller created successfully!"}
