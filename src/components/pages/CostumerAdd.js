@@ -8,10 +8,10 @@ import { useLocation } from 'react-router-dom';
 function CostumerAdd(){
 
     const {state} = useLocation()
-    const dataUser = state
+    const dataUserLogged = state
 
     function createCostumer(costumer){
-        const isCostumerExist = dataUser.costumers.find((costumerDataUser)=> costumerDataUser.email === costumer.email )
+        const isCostumerExist = dataUserLogged.costumers.find((costumerDataUser)=> costumerDataUser.email === costumer.email )
         if(!isCostumerExist) {
             costumer.id = uuidv4()
         } else {
@@ -20,7 +20,7 @@ function CostumerAdd(){
             return
         }
         
-        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUser._id}`, {
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'

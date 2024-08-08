@@ -9,20 +9,32 @@ import Costumer from "../form/Costumer";
 import Input from "../form/Input"
 
 import styles from './Costumers.module.css'
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 
 function Costumers(){
     const {state} = useLocation()
     const dataUserLogged = state
-    const costumers = dataUserLogged.costumers
+    const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
 
     const costumersFiltered = useMemo(() => {
         const queryLowerCase  = query.toLowerCase()
         return costumers.filter(costumer => costumer.name.toLowerCase().includes(queryLowerCase))
-    }, [query]) 
+    }, [query, costumers]) 
         
-
+    useEffect(() => {
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'Application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            setCostumers(data)
+    
+        })
+    }, [dataUserLogged._id])
     return (
         <div className={styles.div_father}>
             <div className={styles.form}>
@@ -33,8 +45,7 @@ function Costumers(){
                 value={query}
                 handleOnChange={(e) => setQuery(e.target.value)}
                 name="search"
-                placeholder="Search your costumer"
-                key={query}                              
+                placeholder="Search your costumer"                             
                 />
                 <div>
                   {
