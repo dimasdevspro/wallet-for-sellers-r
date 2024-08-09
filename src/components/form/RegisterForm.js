@@ -11,8 +11,7 @@ function RegisterForm({ handleSubmit, sellerData }){
     
     const submit = (e) => {
         e.preventDefault()
-        handleSubmit(seller)
-        setSeller({})
+        handleSubmit(seller, setSeller)
     }
 
     function handleChange(e) {
