@@ -13,7 +13,7 @@ import React, { useState, useMemo, useEffect } from "react";
 
 function Costumers(){
     const {state} = useLocation()
-    const dataUserLogged = state
+    const {dataUserLogged} = state
     const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
 
@@ -32,7 +32,7 @@ function Costumers(){
         .then((resp) => resp.json())
         .then((data) => {
             setCostumers(data)
-    
+
         })
     }, [dataUserLogged._id])
     return (
@@ -65,7 +65,7 @@ function Costumers(){
                     )         
                   }  
                 <div className={styles.link_add_costumer}>
-                    <Link to='/costumer-add' state={dataUserLogged}>
+                    <Link to='/costumer-add' state={{costumers, dataUserLogged}}>
                     <img src={AddCostumer} alt=''/>
                     </Link>
                 </div>

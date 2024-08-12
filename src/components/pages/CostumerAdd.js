@@ -18,8 +18,13 @@ function CostumerAdd(){
 
     function createCostumer(costumer){
         const isCostumerExist = dataUserLogged.costumers.find((costumerDataUser)=> costumerDataUser.email === costumer.email )
-        if(!isCostumerExist) {
-            costumer.id = uuidv4()
+        if(isCostumerExist) {
+            setMessage("Customer is already registered!")
+            setTypeMessage("error")
+            return
+        }
+
+        costumer.id = uuidv4()
 
             fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}`, {
                 method: 'PATCH',
@@ -34,12 +39,7 @@ function CostumerAdd(){
                 setTypeMessage("success")
             })
             .catch(err => console.log(err))
-        } else {
-            setMessage("Customer is already registered!")
-            setTypeMessage("error")
-            return
-        }
-    }
+}
     return(
         <div className={styles.container}>
             <div className={styles.header}>
