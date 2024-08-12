@@ -52,7 +52,11 @@ function Costumers(){
                     costumersFiltered.length === 0 ?
                     <h4>"You havent costumer in your wallet..."</h4> :
                      costumersFiltered.map((costumer) =>
-                    <Link to='/costumer-info' state={[dataUserLogged, costumer]}>
+                    <Link 
+                    to='/costumer-info' 
+                    state={[dataUserLogged, costumer]}
+                    key={costumer.id}
+                    >
                     <Costumer
                     id={costumer.id}
                     name={costumer.name}
