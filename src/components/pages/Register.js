@@ -46,12 +46,14 @@ function Register(){
             resp.json()
         })
         .then((data) => {
-            setMessage("Seller created successfully!")
-            typeMessage("success")
+            const successMessage = "Seller created successfully!"
+            const messageType = "success"
+            setMessage(successMessage)
+            setTypeMessage(messageType)
             //limpar formulário
             setSellerData({})
             //redirect
-            navigate("/login")
+            navigate("/login", {state:{ message: successMessage, typeMessage: messageType}})
         })
         .catch(err => console.log(err))
             }

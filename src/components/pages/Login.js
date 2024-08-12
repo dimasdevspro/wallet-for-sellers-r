@@ -2,14 +2,16 @@ import { useContext, useState } from 'react';
 import LoginForm from '../form/LoginForm';
 import styles from './Login.module.css';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import Message from '../layout/Message';
 
 function Login() {
     const { setAuth } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [ message, setMessage ] = useState('')
+    const { state } = useLocation();
+    const [ message, setMessage ] = useState(state?.message || '')
+    const [ typeMessage, setTypeMessage ] = useState(state?.typeMessage || '')
 
     function getLogin() {
         fetch('https://e-wallet-for-sellers-api.vercel.app/sellers/', {
@@ -38,6 +40,7 @@ function Login() {
                 });
             } else {
                 setMessage("Login or password incorrect!")
+                setTypeMessage("error")
             }    
         })
         .catch(err => console.log(err));
@@ -49,7 +52,7 @@ function Login() {
             {message && (
                 <Message
                     msg={message}
-                    type="error"
+                    type={typeMessage}
                 />
             )}
             <LoginForm handleSubmit={getLogin} />
