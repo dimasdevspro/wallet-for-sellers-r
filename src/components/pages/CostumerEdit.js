@@ -2,6 +2,7 @@
 import AddCostumer from '../../img/Addcostumers.svg';
 import styles from './CostumerEdit.module.css';
 
+import Message from '../layout/Message'
 import CostumerEditForm from '../form/CostumerEditForm';
 
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -34,13 +35,33 @@ function CostumerEdit(){
             
         })
         .catch(err => console.log('Error:', err))
-        setMessage("Failed to edit costumer")
-        setTypeMessage("error")
+            setMessage("Failed to edit costumer")
+            setTypeMessage("error")
         
     }
 
-    function deleteCostumer(){
-
+    function deleteCostumer(costumerDeleted){
+        
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers/${costumer.id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then((resp) => {
+            if(!resp.ok){
+                return resp.text().then(text => { throw new Error(text)})
+            }
+            return resp.json()
+        })
+        .then(() => {
+            navigate('/costumers', {state: { dataUserLogged, message: "Costumer deleted successfully!", typeMessage: "success" }})
+        })
+        .catch(err => {
+            console.log('Error', err)
+            setMessage("Failed to delete costumer")
+            setTypeMessage("error")
+        })
     }
 
     return(
@@ -48,6 +69,10 @@ function CostumerEdit(){
             <div className={styles.header}>
                 <img src={AddCostumer} alt='edit costumer'/>
                 <h1>Edit Costumer</h1>
+                <Message
+                msg={message}
+                type={typeMessage}
+                />
             </div>
             <CostumerEditForm costumer={costumer} handleSubmitEdit={editCostumer} handleSubmitDelete={deleteCostumer}/>
         </div>

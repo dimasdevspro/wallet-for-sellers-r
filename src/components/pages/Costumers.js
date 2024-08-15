@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 
 import { Link } from "react-router-dom"
 
+import Message from '../layout/Message'
+
 import Seller from '../../img/login.svg'
 import AddCostumer from '../../img/Addcostumers.svg';
 import Costumer from "../form/Costumer";
@@ -13,7 +15,7 @@ import React, { useState, useMemo, useEffect } from "react";
 
 function Costumers(){
     const {state} = useLocation()
-    const dataUserLogged = state
+    const {dataUserLogged, message, typeMessage} = state
     const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
 
@@ -40,6 +42,10 @@ function Costumers(){
             <div className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Costumers</h1>
+                <Message
+                msg={message}
+                type={typeMessage}
+                />
                 <Input
                 type="text"
                 value={query}

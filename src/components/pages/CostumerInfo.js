@@ -4,7 +4,6 @@ import Message from '../layout/Message'
 import Seller from '../../img/login.svg'
 import styles from './CostumerInfo.module.css'
 import Edit from '../../img/edit.svg'
-import { useState } from "react"
 
 function CostumerInfo(){
 
