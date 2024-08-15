@@ -18,7 +18,9 @@ function Navbar2(){
     const {auth, setAuth } = useContext(AuthContext)
 
     const logout = () => {
-        setAuth(!auth)
+        setAuth(false)
+        // Remove o valor de autenticação do localStorage
+        localStorage.removeItem("auth")
     }
 
     return (

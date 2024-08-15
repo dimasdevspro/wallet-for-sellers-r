@@ -10,8 +10,11 @@ function Navbar(){
     const { auth, setAuth } = useContext(AuthContext)
 
     const logout = () => {
-        setAuth(!auth)
+        setAuth(false)
+        // Remove o valor de autenticação do localStorage
+        localStorage.removeItem("auth")
     }
+    
     return (
         <nav className={styles.navbar}>
                 <img src={wallet} alt='wallet'/>
