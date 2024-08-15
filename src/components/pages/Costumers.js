@@ -15,16 +15,17 @@ import React, { useState, useMemo, useEffect } from "react";
 
 function Costumers(){
     const {state} = useLocation()
-    const {dataUserLogged, message, typeMessage} = state
+    const {message, typeMessage} = state
+    const {dataUserLogged} = state || {}
     const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
-
     const costumersFiltered = useMemo(() => {
         const queryLowerCase  = query.toLowerCase()
         return costumers.filter(costumer => costumer.name.toLowerCase().includes(queryLowerCase))
     }, [query, costumers]) 
         
     useEffect(() => {
+       if(dataUserLogged && dataUserLogged._id){
         fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers`, {
             method: 'GET',
             headers: {
@@ -36,7 +37,10 @@ function Costumers(){
             setCostumers(data)
 
         })
-    }, [dataUserLogged._id])
+       } else {
+        console.error("dataUserLogged or _id isn´t defined!")
+       }
+    }, [dataUserLogged])
     return (
         <div className={styles.div_father}>
             <div className={styles.form}>

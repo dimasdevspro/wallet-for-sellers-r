@@ -28,6 +28,10 @@ function CostumerEditForm({ handleSubmitEdit, handleSubmitDelete, costumer }) {
         }));
     }
 
+    const submitDelete = (e) => {
+        e.preventDefault();
+        handleSubmitDelete()
+    }
     return (
         <form onSubmit={submit} className={styles.form}>
             <Input
@@ -63,7 +67,7 @@ function CostumerEditForm({ handleSubmitEdit, handleSubmitDelete, costumer }) {
                 value={costumerEdited.company || ''}
             />
             <div className={styles.buttons_form}>
-                <button onClick={handleSubmitDelete}>
+                <button onClick={submitDelete}>
                     <img src={Delete} alt="Button for delete customer" />
                 </button>
                 <button type="submit">

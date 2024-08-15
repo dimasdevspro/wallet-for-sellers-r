@@ -40,7 +40,7 @@ function CostumerEdit(){
         
     }
 
-    function deleteCostumer(costumerDeleted){
+    function deleteCostumer(){
         
         fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers/${costumer.id}`, {
             method: 'DELETE',
@@ -52,10 +52,10 @@ function CostumerEdit(){
             if(!resp.ok){
                 return resp.text().then(text => { throw new Error(text)})
             }
-            return resp.json()
+            return resp.text()
         })
         .then(() => {
-            navigate('/costumers', {state: { dataUserLogged, message: "Costumer deleted successfully!", typeMessage: "success" }})
+            navigate('/costumers', {state: {dataUserLogged, message: "Costumer deleted successfully!", typeMessage: "success" }})
         })
         .catch(err => {
             console.log('Error', err)
