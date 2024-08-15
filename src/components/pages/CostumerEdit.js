@@ -2,39 +2,40 @@
 import AddCostumer from '../../img/Addcostumers.svg';
 import styles from './CostumerEdit.module.css';
 
-import { useLocation } from 'react-router-dom';
 import CostumerEditForm from '../form/CostumerEditForm';
 
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
 function CostumerEdit(){
+    const navigate = useNavigate()
     const {state} = useLocation()
-    const costumer = state[1]
-    const dataUserLogged = state[0]
+    const {dataUserLogged, costumer} = state
+    const [ message, setMessage ] = useState("")
+    const [ typeMessage, setTypeMessage] = useState("")
 
     function editCostumer(costumerEdited){
-        const index = dataUserLogged.costumers.findIndex(costumer => costumer.id === costumerEdited.id)
-
-        if (index !== -1) {
-            dataUserLogged.costumers[index] = {...costumerEdited}
-        }
-            console.log(dataUserLogged)
-
-        fetch(`https://server-e-wallet.vercel.app/seller/${dataUserLogged.id}`, {
+        
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers/${costumer.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json'
             }, 
-            body: JSON.stringify(dataUserLogged)
+            body: JSON.stringify(costumerEdited)
         })
         .then((resp) => {
             if(!resp.ok) {
                 return resp.text().then(text => { throw new Error(text)})
             }   
-            resp.json()})
+            return resp.json()})
         .then((data) => {
-            console.log('Customer updated sucessfully', data)
-
+            const costumer = data
+            navigate('/costumer-info', {state: {dataUserLogged, costumer, message: "Costumer edited successfully!", typeMessage:"success"}})
+            
         })
         .catch(err => console.log('Error:', err))
+        setMessage("Failed to edit costumer")
+        setTypeMessage("error")
         
     }
 

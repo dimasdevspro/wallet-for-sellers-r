@@ -13,7 +13,7 @@ import React, { useState, useMemo, useEffect } from "react";
 
 function Costumers(){
     const {state} = useLocation()
-    const {dataUserLogged} = state
+    const dataUserLogged = state
     const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
 
@@ -54,7 +54,7 @@ function Costumers(){
                      costumersFiltered.map((costumer) =>
                     <Link 
                     to='/costumer-info' 
-                    state={[dataUserLogged, costumer]}
+                    state={{dataUserLogged, costumer}}
                     key={costumer.id}
                     >
                     <Costumer
