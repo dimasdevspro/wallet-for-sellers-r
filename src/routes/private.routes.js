@@ -13,6 +13,7 @@ import CostumerEdit from '../components/pages/CostumerEdit'
 import Navbar from '../components/layout/Navbar'
 import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
+import UpdateSeller from '../components/pages/UpdateSeller'
 
 function PrivateRoutes(){
 
@@ -31,6 +32,7 @@ function PrivateRoutes(){
         <Route path='/costumer-info' element={<CostumerInfo/>}/>
         <Route path='/costumer-add' element={<CostumerAdd/>}/>
         <Route path='/costumer-edit' element={<CostumerEdit/>}/>
+        <Route path='/update-seller' element={<UpdateSeller/>}/>
     </Switch>
     <Footer/>
 </Router>

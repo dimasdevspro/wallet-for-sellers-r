@@ -2,7 +2,10 @@
 import { useState } from 'react';
 import UpdateForm from '../form/UpdateForm';
 import Message from '../layout/Message';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+import styles from './UpdateSeller.module.css'
+import Home from '../../img/home.svg';
 
 function UpdateSeller() {
     const { state } = useLocation()
@@ -37,10 +40,15 @@ function UpdateSeller() {
     function deleteSeller(){
 
     }
-    
+
   return (
-    <div className={styles.body}>
-            <h1>Update´s Seller</h1>
+      <div className={styles.body}>
+        <div className={styles.header}>
+        <h1>Update´s Seller</h1>
+        <Link to='/logon' state={dataUserLogged}>
+        <img src={Home} alt="Home" id={styles.icon_home} />
+        </Link>
+        </div>
             <Message
             msg={message}
             type={typeMessage}

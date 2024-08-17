@@ -12,9 +12,18 @@
 .form button {
     display: flex;
     position: relative;
-    right: 1.25em;
-    width: 2em;
     border: none;
-    background-color: #ffffff;
+    background-color: transparent;
     cursor: pointer;
+}
+
+
+.form img {
+    width: 3em;
+    height: 3em;
+}
+
+.buttons_form {
+    justify-self: right;
+    display: flex;
 }

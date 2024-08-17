@@ -73,12 +73,14 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 handleOnChange={handleChange}
                 value={seller.password ? seller.password : ''} 
                 />
-            <button onClick={submitDelete}>
-                <img src={Save} alt='button save'/>    
-            </button>
+            <div className={styles.buttons_form}>
             <button>
                 <img src={Delete} alt='button delete'/>    
-            </button>   
+            </button>
+            <button onClick={submitDelete}>
+                <img src={Save} alt='button save'/>    
+            </button>    
+            </div>   
             </form>
     )
 }
