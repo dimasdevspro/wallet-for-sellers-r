@@ -13,7 +13,7 @@ function UpdateSeller() {
     const [ message, setMessage ] = useState("")
     const [ typeMessage, setTypeMessage ] = useState("")
 
-    function updateSeller(seller, setSellerData){
+    function updateSeller(seller){
 
         fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}`, {
             method: 'PATCH',
@@ -26,7 +26,7 @@ function UpdateSeller() {
             if(!resp.ok){
                 return resp.text().then(text => { throw new Error(text)});
             }    
-            resp.json()
+            return resp.json()
         })
         .then(() => {
             const successMessage = "Seller updated successfully!"
@@ -34,7 +34,13 @@ function UpdateSeller() {
             setMessage(successMessage)
             setTypeMessage(messageType)
         })
-        .catch(err => console.log(err))
+        .catch((err) => {
+            const errorMessage = "Error for to update Seller"
+            const messageType = "error"
+            setMessage(errorMessage)
+            setTypeMessage(messageType)
+            console.error(err)
+        })
     }
 
     function deleteSeller(){
@@ -53,7 +59,7 @@ function UpdateSeller() {
             msg={message}
             type={typeMessage}
             />
-            <UpdateForm handleEditSubmit={updateSeller} handleDeleteSubmit={deleteSeller}/>
+            <UpdateForm handleEditSubmit={updateSeller} handleDeleteSubmit={deleteSeller} seller={dataUserLogged}/>
         </div>
   )
 }

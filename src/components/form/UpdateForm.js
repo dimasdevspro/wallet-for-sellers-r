@@ -3,16 +3,20 @@ import styles from './UpdateForm.module.css';
 import Delete from '../../img/delete.svg'
 import Save from '../../img/save.svg';
 import Input from './Input';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
-function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
+function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
     
-    const [seller, setSeller] = useState(sellerData || {})
+    const [sellerEdited, setSellerEdited] = useState({})
     
+    useEffect(() => {
+        setSellerEdited(seller);
+    }, [seller]);
+
     const submitEdit = (e) => {
         e.preventDefault()
-        handleEditSubmit(seller, setSeller)
+        handleEditSubmit(sellerEdited, setSellerEdited)
     }
 
     const submitDelete = (e) => {
@@ -21,8 +25,13 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
     }
 
     function handleChange(e) {
-        setSeller({...seller, [e.target.name]: e.target.value })
+        const { name, value } = e.target;
+        setSellerEdited(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     }
+
     return (
         <form onSubmit={submitEdit} className={styles.form}>
                 <Input
@@ -31,7 +40,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 name="name"
                 placeholder="input your name"
                 handleOnChange={handleChange}
-                value={seller.name ? seller.name : ''}
+                value={sellerEdited.name || ''}
                 />
                 <Input
                 type="email"
@@ -39,7 +48,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 name="email"
                 placeholder="input your email"
                 handleOnChange={handleChange}
-                value={seller.email ? seller.email : ''}
+                value={sellerEdited.email ||''}
                 />
                 <Input
                 type="tel"
@@ -47,7 +56,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 name="phone"
                 placeholder="input your phone or cel"
                 handleOnChange={handleChange}
-                value={seller.phone ? seller.phone : ''}
+                value={sellerEdited.phone || ''}
                 />
                 <Input
                 type="text"
@@ -55,7 +64,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 name="company"
                 placeholder="input your company"
                 handleOnChange={handleChange}
-                value={seller.company ? seller.company : ''}
+                value={sellerEdited.company || ''}
                 />
                 <Input
                 type="text"
@@ -63,7 +72,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 name="login"
                 placeholder="input your email"
                 handleOnChange={handleChange}
-                value={seller.login ? seller.login : ''}
+                value={sellerEdited.login || ''}
                 />
                 <Input
                 type="password"
@@ -71,15 +80,15 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, sellerData }){
                 name="password"
                 placeholder="input your password"
                 handleOnChange={handleChange}
-                value={seller.password ? seller.password : ''} 
+                value={sellerEdited.password || ''} 
                 />
             <div className={styles.buttons_form}>
-            <button>
-                <img src={Delete} alt='button delete'/>    
-            </button>
             <button onClick={submitDelete}>
-                <img src={Save} alt='button save'/>    
-            </button>    
+                <img src={Delete} alt='button save'/>    
+            </button> 
+            <button>
+                <img src={Save} alt='button delete'/>    
+            </button>   
             </div>   
             </form>
     )
