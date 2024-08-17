@@ -15,17 +15,16 @@ import React, { useState, useMemo, useEffect } from "react";
 
 function Costumers(){
     const {state} = useLocation()
-    const {message, typeMessage} = state
-    const {dataUserLogged} = state || {}
+    const dataUserLogged = state || {}
     const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
+    
     const costumersFiltered = useMemo(() => {
         const queryLowerCase  = query.toLowerCase()
         return costumers.filter(costumer => costumer.name.toLowerCase().includes(queryLowerCase))
     }, [query, costumers]) 
         
     useEffect(() => {
-       if(dataUserLogged && dataUserLogged._id){
         fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers`, {
             method: 'GET',
             headers: {
@@ -37,19 +36,13 @@ function Costumers(){
             setCostumers(data)
 
         })
-       } else {
-        console.error("dataUserLogged or _id isn´t defined!")
-       }
-    }, [dataUserLogged])
+       
+    }, [dataUserLogged._id])
     return (
         <div className={styles.div_father}>
             <div className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Costumers</h1>
-                <Message
-                msg={message}
-                type={typeMessage}
-                />
                 <Input
                 type="text"
                 value={query}
@@ -75,7 +68,7 @@ function Costumers(){
                     )         
                   }  
                 <div className={styles.link_add_costumer}>
-                    <Link to='/costumer-add' state={{costumers, dataUserLogged}}>
+                    <Link to='/costumer-add' state={dataUserLogged}>
                     <img src={AddCostumer} alt=''/>
                     </Link>
                 </div>

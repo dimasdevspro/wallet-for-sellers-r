@@ -55,7 +55,7 @@ function CostumerEdit(){
             return resp.text()
         })
         .then(() => {
-            navigate('/costumers', {state: {dataUserLogged, message: "Costumer deleted successfully!", typeMessage: "success" }})
+            navigate('/costumers', {state: dataUserLogged})
         })
         .catch(err => {
             console.log('Error', err)

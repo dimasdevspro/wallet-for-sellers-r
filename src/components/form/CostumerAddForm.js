@@ -10,8 +10,7 @@ import { useState } from 'react';
 function CostumerAddForm({handleSubmit, costumerData}) {
 
     const {state} = useLocation()
-    const dataUser = state
-
+    const dataUserLogged = state
     const [costumer, setCostumer ] =  useState(costumerData || {})
 
     const submit = (e) => {
@@ -59,7 +58,7 @@ function CostumerAddForm({handleSubmit, costumerData}) {
             value={costumer.company || ''}   
             />
             <div className={styles.buttons_form}>
-                <Link to='/costumers' state={dataUser}>
+                <Link to='/costumers' state={dataUserLogged}>
                     <img src={Costumers} alt='Costumers'/>
                 </Link>
                 <button >

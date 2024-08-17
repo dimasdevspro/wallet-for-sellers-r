@@ -9,8 +9,7 @@ import Addcostumers from '../../img/Addcostumers.svg'
 function Logon() {
 
     const {state} = useLocation()
-    let dataUserLogged = state
-        
+    const dataUserLogged = state
     return(
         <div className={styles.div_father}>
             <form method='' action='' className={styles.form}>
