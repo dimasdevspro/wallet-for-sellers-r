@@ -6,6 +6,13 @@
     align-items: center;
 }
 
+#icon_home {
+    position: absolute;
+    width: 3.25em;
+    height: 3.25em;
+    right: 1em;
+}
+
 .costumer img {
     width: 6.25em;
     height: 6.25em;

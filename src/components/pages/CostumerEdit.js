@@ -1,11 +1,13 @@
 
+import Home from '../../img/home.svg'
 import AddCostumer from '../../img/Addcostumers.svg';
+
 import styles from './CostumerEdit.module.css';
 
 import Message from '../layout/Message'
 import CostumerEditForm from '../form/CostumerEditForm';
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function CostumerEdit(){
@@ -66,6 +68,9 @@ function CostumerEdit(){
 
     return(
         <div className={styles.container}>
+            <Link to='/logon' state={dataUserLogged}>
+            <img src={Home} alt="Home" id={styles.icon_home} />
+            </Link>
             <div className={styles.header}>
                 <img src={AddCostumer} alt='edit costumer'/>
                 <h1>Edit Costumer</h1>

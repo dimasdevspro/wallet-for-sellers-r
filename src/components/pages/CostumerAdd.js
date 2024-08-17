@@ -2,11 +2,12 @@ import { v4 as uuidv4 } from 'uuid'
 
 import Message from '../layout/Message'
 
+import Home from '../../img/home.svg'
 import AddCostumer from '../../img/Addcostumers.svg';
 import CostumerAddForm from '../form/CostumerAddForm';
 
 import styles from './CostumerAdd.module.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function CostumerAdd(){
@@ -42,6 +43,9 @@ function CostumerAdd(){
 }
     return(
         <div className={styles.container}>
+            <Link to='/logon' state={dataUserLogged}>
+            <img src={Home} alt="Home" id={styles.icon_home} />
+            </Link>
             <div className={styles.header}>
                 <img src={AddCostumer} alt='add costumer'/>
                 <h1>Add Costumer</h1>

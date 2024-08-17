@@ -1,8 +1,12 @@
 import { Link, useLocation } from "react-router-dom"
+
 import CostumerInfos from '../form/CostumerInfos'
 import Message from '../layout/Message'
-import Seller from '../../img/login.svg'
+
 import styles from './CostumerInfo.module.css'
+
+import Home from '../../img/home.svg'
+import Seller from '../../img/login.svg'
 import Edit from '../../img/edit.svg'
 
 function CostumerInfo(){
@@ -12,6 +16,9 @@ function CostumerInfo(){
     
     return (
         <div className={styles.costumer}>
+            <Link to='/logon' state={dataUserLogged}>
+            <img src={Home} alt="Home" id={styles.icon_home} />
+            </Link>
             <img src={Seller} alt="Seller"/>
             <h1>Costumer</h1>
             <Message

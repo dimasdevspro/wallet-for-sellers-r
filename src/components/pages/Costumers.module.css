@@ -5,6 +5,14 @@
     height: 60vh;
 }
 
+
+#icon_home {
+    position: absolute;
+    width: 3.25em;
+    height: 3.25em;
+    right: 1em;
+}
+
 .div_father input {
     background-color: #ededed;
     border: none;

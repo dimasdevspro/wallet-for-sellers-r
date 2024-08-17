@@ -3,8 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import { Link } from "react-router-dom"
 
-import Message from '../layout/Message'
-
+import Home from '../../img/home.svg'
 import Seller from '../../img/login.svg'
 import AddCostumer from '../../img/Addcostumers.svg';
 import Costumer from "../form/Costumer";
@@ -40,6 +39,9 @@ function Costumers(){
     }, [dataUserLogged._id])
     return (
         <div className={styles.div_father}>
+            <Link to='/logon' state={dataUserLogged}>
+            <img src={Home} alt="Home" id={styles.icon_home} />
+            </Link>
             <div className={styles.form}>
                 <img src={Seller} alt="seller"/>
                 <h1>Costumers</h1>
