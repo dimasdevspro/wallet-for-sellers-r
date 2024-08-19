@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import LoginForm from '../form/LoginForm';
 import styles from './Login.module.css';
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import Message from '../layout/Message';
 
@@ -56,6 +56,9 @@ function Login() {
                 />
             )}
             <LoginForm handleSubmit={getLogin} />
+            <div className={styles.forgot_password}>
+            <p>Forgot your password?<Link to='/forgot-password'> Click here!</Link></p>
+            </div>
         </div>
     );
 }

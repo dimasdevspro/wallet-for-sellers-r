@@ -4,7 +4,7 @@
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
-    padding: 3em;
+    padding: 3em 3em 0;
 }
 
 .form button {

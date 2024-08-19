@@ -44,6 +44,32 @@ function UpdateSeller() {
     }
 
     function deleteSeller(){
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then((resp) => {
+            if(!resp.ok){
+                return resp.text().then(text => { throw new Error(text)})
+            }
+        
+            return resp.json()
+        })
+        .then(() => {
+            const successMessage = "Seller delete successfully!"
+            const messageType = "success"
+            setMessage(successMessage)
+            setTypeMessage(messageType)
+        })
+        .catch((err) => {
+            const errorMessage = "Error for to delete Seller"
+            const messageType = "error"
+            setMessage(errorMessage)
+            setTypeMessage(messageType)
+            console.error(err)
+        })
 
     }
 

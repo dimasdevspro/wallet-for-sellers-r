@@ -8,6 +8,7 @@ import Contact from '../components/pages/Contact'
 import Navbar from '../components/layout/Navbar'
 import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
+import ForgotPassword from '../components/pages/ForgotPassword'
 
 function PublicRoutes(){
 
@@ -21,6 +22,7 @@ function PublicRoutes(){
         <Route path='/register' element={<Register/>}/>
         <Route path='/company' element={<App1/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/forgot-password' element={<ForgotPassword/>}/>
     </Switch>
     <Footer/>
 </Router>

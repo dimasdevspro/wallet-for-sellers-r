@@ -11,7 +11,8 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
     const [sellerEdited, setSellerEdited] = useState({})
     
     useEffect(() => {
-        setSellerEdited(seller);
+        const {_id, ...sellerWithoutId } = seller
+        setSellerEdited(sellerWithoutId);
     }, [seller]);
 
     const submitEdit = (e) => {

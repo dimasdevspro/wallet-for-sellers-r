@@ -4,3 +4,14 @@
     padding: 1em;
 }
 
+.forgot_password {
+    display: flex;
+    width: 14em;
+    margin: 0 auto;
+    justify-content: right;
+}
+
+.forgot_password p, .forgot_password a {
+    font-size: 10px;
+}
+
