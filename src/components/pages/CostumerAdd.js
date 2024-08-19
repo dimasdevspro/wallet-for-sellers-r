@@ -27,7 +27,7 @@ function CostumerAdd(){
 
         costumer.id = uuidv4()
 
-            fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}`, {
+            fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/newcostumer`, {
                 method: 'PATCH',
                 headers: {
                     'Content-type': 'application/json'
