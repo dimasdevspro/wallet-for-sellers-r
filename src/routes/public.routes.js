@@ -9,6 +9,7 @@ import Navbar from '../components/layout/Navbar'
 import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
 import ForgotPassword from '../components/pages/ForgotPassword'
+import ResetPassword from '../components/pages/ResetPassword'
 
 function PublicRoutes(){
 
@@ -23,6 +24,7 @@ function PublicRoutes(){
         <Route path='/company' element={<App1/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
+        <Route path='/reset-password/:token' element={<ResetPassword/>}/>
     </Switch>
     <Footer/>
 </Router>

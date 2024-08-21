@@ -36,6 +36,7 @@ function ResetPassword() {
           .then((data) => {
             if(data){
                 setMessage('Password successfully reset. Redirecting to login...')
+                setTypeMessage('success')
                 setTimeout(() => navigate('/login'), 3000)
             }else{
                 setMessage(data.message || 'Error resetting password.')
@@ -43,6 +44,7 @@ function ResetPassword() {
           })
           .catch((error) =>{
             setMessage('Error resetting password')
+            setTypeMessage('error')
           })  
     }
 
@@ -61,7 +63,7 @@ function ResetPassword() {
             handleOnChange={(e) => setPassword(e.target.value)}
             required
             />
-            <button type={changePassword} id={styles.button_save}><img src={Save} id={styles.button_save_img}/></button>
+            <button onClick={changePassword} id={styles.button_save}><img src={Save} id={styles.button_save_img}/></button>
         </form>
     </div>
   )

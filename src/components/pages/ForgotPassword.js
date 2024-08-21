@@ -17,7 +17,7 @@ const ForgotPassword = () => {
     }
 
     function sendEmailForRecovery() {
-        fetch('https://e-wallet-for-sellers-api.vercel.app/forgot-password', {
+        fetch('http://localhost:5000/forgot-password', {
             method: "POST",
             headers: {
                 'Content-type': 'application/json'
