@@ -17,10 +17,11 @@ function ResetPassword() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        changePassword()
     }
 
     function changePassword(){
-          fetch(`https://e-wallet-for-sellers-api.vercel.app/reset-password${token}`, {
+          fetch(`https://e-wallet-for-sellers-api.vercel.app/reset-password/${token}`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -35,7 +36,7 @@ function ResetPassword() {
           })
           .then((data) => {
             if(data){
-                setMessage('Password successfully reset. Redirecting to login...')
+                setMessage(data.message)
                 setTypeMessage('success')
                 setTimeout(() => navigate('/login'), 3000)
             }else{
@@ -43,6 +44,7 @@ function ResetPassword() {
             }
           })
           .catch((error) =>{
+            console.error(error.message)
             setMessage('Error resetting password')
             setTypeMessage('error')
           })  
@@ -63,7 +65,7 @@ function ResetPassword() {
             handleOnChange={(e) => setPassword(e.target.value)}
             required
             />
-            <button onClick={changePassword} id={styles.button_save}><img src={Save} id={styles.button_save_img}/></button>
+            <button id={styles.button_save}><img src={Save} id={styles.button_save_img}/></button>
         </form>
     </div>
   )

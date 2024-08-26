@@ -55,7 +55,11 @@ function Register(){
             //redirect
             navigate("/login", {state:{ message: successMessage, typeMessage: messageType}})
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            setMessage(err.message)
+            setTypeMessage("error")
+            console.log(err)
+        })
             }
         })
         .catch(err => console.log(err))

@@ -14,6 +14,7 @@ const ForgotPassword = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        sendEmailForRecovery()
     }
 
     function sendEmailForRecovery() {
@@ -32,7 +33,7 @@ const ForgotPassword = () => {
         })
         .then((data) => {
             if(data) {
-                setMessage('A reset link has been sent to your email address.');
+                setMessage(data.message);
                 setTypeMessage('success');
             } else {
                 setMessage( data.message || 'Error occurred, please try again.');
@@ -40,9 +41,9 @@ const ForgotPassword = () => {
             }
         })
         .catch ((err) =>{
+            console.error(err.message)
             setMessage('Error occurred, please try again.')
             setTypeMessage('error')
-            console.error(err.message)
         })
     }
   
@@ -55,13 +56,13 @@ const ForgotPassword = () => {
         />
         <form onSubmit={handleSubmit} className={styles.form_email_recovery}>
             <Input
-            type={email}
+            type="email"
             placeholder="Enter your registered email"
             value={email}
             handleOnChange={ (e) => setEmail(e.target.value)}
             required
             />
-            <button onClick={sendEmailForRecovery} id={styles.button_send}>
+            <button id={styles.button_send}>
                 <img src={Send} alt="to send" id={styles.button_send_img}/>
             </button>
         </form>
