@@ -11,6 +11,7 @@ import Footer from '../components/layout/Footer'
 import ForgotPassword from '../components/pages/ForgotPassword'
 import ResetPassword from '../components/pages/ResetPassword'
 import PrivacyPolicy from '../components/pages/PrivacyPolicy'
+import TermsOfService from '../components/pages/TermsOfService'
 
 function PublicRoutes(){
 
@@ -27,7 +28,7 @@ function PublicRoutes(){
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/reset-password/:token' element={<ResetPassword/>}/>
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
-
+        <Route path='/terms-of-service' element={<TermsOfService/>}/>
     </Switch>
     <Footer/>
 </Router>
