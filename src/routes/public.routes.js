@@ -10,6 +10,7 @@ import Navbar2 from '../components/layout/Navbar2'
 import Footer from '../components/layout/Footer'
 import ForgotPassword from '../components/pages/ForgotPassword'
 import ResetPassword from '../components/pages/ResetPassword'
+import PrivacyPolicy from '../components/pages/PrivacyPolicy'
 
 function PublicRoutes(){
 
@@ -25,6 +26,8 @@ function PublicRoutes(){
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/reset-password/:token' element={<ResetPassword/>}/>
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+
     </Switch>
     <Footer/>
 </Router>
