@@ -21,7 +21,14 @@ function Login() {
             },
             body: JSON.stringify({login, password})
         })
-        .then((resp) => resp.json())
+        .then((resp) => {
+            if(!resp.ok){
+                return resp.json().then((data) => {
+                    throw new Error(data.message || "An error occurred")
+                })
+            }
+            return resp.json()
+        })
         .then((data) => {
                     setAuth(true);
                     navigate("/logon", { state: data })
