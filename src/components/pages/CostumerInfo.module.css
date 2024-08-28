@@ -1,6 +1,7 @@
 .costumer {
     display: flex;
     width: 20em;
+    height: 100vh;
     margin: 1em auto;
     flex-direction: column;
     align-items: center;

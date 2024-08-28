@@ -23,10 +23,8 @@ function Login() {
         })
         .then((resp) => resp.json())
         .then((data) => {
-                    setMessage("Login successfully!")
-                    setTypeMessage("success")
                     setAuth(true);
-                    setTimeout(() => {navigate("/logon", { state: data });}, 3000)
+                    navigate("/logon", { state: data })
                 })
         .catch(error => {
             setMessage(error.message)
