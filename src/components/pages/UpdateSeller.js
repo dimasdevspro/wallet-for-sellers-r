@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import UpdateForm from '../form/UpdateForm';
 import Message from '../layout/Message';
 import { Link, useLocation } from 'react-router-dom';
@@ -12,6 +12,29 @@ function UpdateSeller() {
     const dataUserLogged = state
     const [ message, setMessage ] = useState("")
     const [ typeMessage, setTypeMessage ] = useState("")
+    const [dataUserByDB, setDataUserByDB] = useState({})
+
+    useEffect(()=> {
+        fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}`, {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json'
+            }
+        })
+        .then((resp) => {
+            if(!resp.ok){
+                return resp.text().then(text => { throw new Error(text)})
+            }
+            return resp.json()
+        })
+        .then((data) => {
+            setDataUserByDB(data)
+        })
+        .catch((error) => {
+            console.log(error.message)
+        })
+        
+    }, [dataUserLogged._id])
 
     function updateSeller(seller){
 
@@ -85,7 +108,7 @@ function UpdateSeller() {
             msg={message}
             type={typeMessage}
             />
-            <UpdateForm handleEditSubmit={updateSeller} handleDeleteSubmit={deleteSeller} seller={dataUserLogged}/>
+            <UpdateForm handleEditSubmit={updateSeller} handleDeleteSubmit={deleteSeller} seller={dataUserByDB}/>
         </div>
   )
 }

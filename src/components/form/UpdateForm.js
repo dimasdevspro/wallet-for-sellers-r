@@ -9,10 +9,12 @@ import { useState, useEffect } from 'react';
 function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
     
     const [sellerEdited, setSellerEdited] = useState({})
-    
+
     useEffect(() => {
-        const {_id, ...sellerWithoutId } = seller
-        setSellerEdited(sellerWithoutId);
+        if(seller && seller._id){
+            const {_id, password, ...sellerWithoutIdAndPassword } = seller
+            setSellerEdited(sellerWithoutIdAndPassword);
+        }
     }, [seller]);
 
     const submitEdit = (e) => {
@@ -42,6 +44,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
                 placeholder="input your name"
                 handleOnChange={handleChange}
                 value={sellerEdited.name || ''}
+                require
                 />
                 <Input
                 type="email"
@@ -50,6 +53,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
                 placeholder="input your email"
                 handleOnChange={handleChange}
                 value={sellerEdited.email ||''}
+                require
                 />
                 <Input
                 type="tel"
@@ -58,6 +62,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
                 placeholder="input your phone or cel"
                 handleOnChange={handleChange}
                 value={sellerEdited.phone || ''}
+                require
                 />
                 <Input
                 type="text"
@@ -66,6 +71,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
                 placeholder="input your company"
                 handleOnChange={handleChange}
                 value={sellerEdited.company || ''}
+                require
                 />
                 <Input
                 type="text"
@@ -74,6 +80,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
                 placeholder="input your email"
                 handleOnChange={handleChange}
                 value={sellerEdited.login || ''}
+                require
                 />
                 <Input
                 type="password"
@@ -82,6 +89,7 @@ function RegisterForm({ handleEditSubmit, handleDeleteSubmit, seller }){
                 placeholder="input your password"
                 handleOnChange={handleChange}
                 value={sellerEdited.password || ''} 
+                require
                 />
             <div className={styles.buttons_form}>
             <button onClick={submitDelete}>

@@ -11,7 +11,6 @@ function Logon() {
 
     const {state} = useLocation()
     const dataUserLogged = state
-    console.log(dataUserLogged)
     return(
         <div className={styles.div_father}>
             <Link to='/update-seller' state={dataUserLogged}>
