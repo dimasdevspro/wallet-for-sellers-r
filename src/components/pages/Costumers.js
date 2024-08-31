@@ -17,11 +17,19 @@ function Costumers(){
     const dataUserLogged = state || {}
     const [costumers, setCostumers] = useState([])
     const [query, setQuery] = useState('')
+    const [currentPage, setCurrentPage] = useState(1)
+    const costumersPerPage = 10
     
     const costumersFiltered = useMemo(() => {
         const queryLowerCase  = query.toLowerCase()
         return costumers.filter(costumer => costumer.name.toLowerCase().includes(queryLowerCase))
-    }, [query, costumers]) 
+    }, [query, costumers])
+    
+    const indexOfLastCostumer = currentPage * costumersPerPage
+    const indexOfFirstCostumer = indexOfLastCostumer - costumersPerPage
+    const currentsCostumers = costumersFiltered.slice(indexOfFirstCostumer, indexOfLastCostumer)
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
         
     useEffect(() => {
         fetch(`https://e-wallet-for-sellers-api.vercel.app/sellers/${dataUserLogged._id}/costumers`, {
@@ -75,7 +83,17 @@ function Costumers(){
                     </Link>
                 </div>
                 </div>
-                
+                <div className={styles.pagination}>
+                    {Array.from({ length: Math.ceil(costumersFiltered.length / costumersPerPage) }, (_, index) => (
+                        <button
+                        key={index + 1}
+                        onClick={() => paginate(index + 1)}
+                        className={currentPage === index + 1 ? styles.active : ''}
+                        >
+                        {index + 1}
+                        </button>
+                    ))}
+                </div>
             </div>
             
         </div>
