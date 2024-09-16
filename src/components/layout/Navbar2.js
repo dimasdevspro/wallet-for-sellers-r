@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import wallet from '../../img/wallet.svg';
 import styles from '../layout/Navbar2.module.css'
 
@@ -16,6 +16,8 @@ function Navbar2(){
     }; 
 
     const {auth, setAuth } = useContext(AuthContext)
+    const {state} = useLocation()
+    const dataUserLogged = state
 
     const logout = () => {
         setAuth(false)
@@ -28,7 +30,7 @@ function Navbar2(){
                 <img src={wallet} alt='wallet' />
                 <FiAlignJustify onClick={ToggleClass}/>
             <ul className={isActive ? styles.list_unvisible : styles.list_visible }>
-                <li><Link to='/'>Home</Link></li>
+                {!auth ? <li><Link to='/'>Home</Link></li> : <li><Link to='/' state={dataUserLogged}>Home</Link></li>}
                 {!auth && <li><Link to='/register'>Register</Link></li>}
                 <li><Link to='/company'>App</Link></li>
                 <li><Link to='/contact'>Contact</Link></li>
