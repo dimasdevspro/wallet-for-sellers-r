@@ -33,7 +33,7 @@ function Navbar2(){
                 {!auth ? <li><Link to='/'>Home</Link></li> : <li><Link to='/' state={dataUserLogged}>Home</Link></li>}
                 {!auth && <li><Link to='/register'>Register</Link></li>}
                 {!auth ? <li><Link to='/company'>App</Link></li> : <li><Link to='/company' state={dataUserLogged}>App</Link></li>}
-                <li><Link to='/contact'>Contact</Link></li>
+                {!auth ? <li><Link to='/contact'>Contact</Link></li> : <li><Link to='/contact' state={dataUserLogged}>Contact</Link></li>}
                 {!auth ? <li><Link to='/login'>Login</Link></li> : <li><Link to='/login' onClick={logout} >Logout</Link></li>}
 
             </ul>

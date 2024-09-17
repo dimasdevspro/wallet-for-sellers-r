@@ -3,3 +3,10 @@
     height: 100vh;
     padding: 1em;
 }
+
+#icon_home {
+    position: absolute;
+    width: 3.25em;
+    height: 3.25em;
+    right: 1em;
+}
