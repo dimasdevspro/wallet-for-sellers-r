@@ -11,7 +11,7 @@ function Navbar(){
     const {state} = useLocation()
     const dataUserLogged = state
     console.log(dataUserLogged)
-    
+
     const logout = () => {
         setAuth(false)
         // Remove o valor de autenticação do localStorage
@@ -24,7 +24,7 @@ function Navbar(){
             <ul className={styles.list}>
                 {!auth ? <li><Link to='/'>Home</Link></li> : <li><Link to='/' state={dataUserLogged}>Home</Link></li>}
                 {!auth && <li><Link to='/register'>Register</Link></li>}
-                <li><Link to='/company'>App</Link></li>
+                {!auth ? <li><Link to='/company'>App</Link></li> : <li><Link to='/company' state={dataUserLogged}>App</Link></li>}
                 <li><Link to='/contact'>Contact</Link></li>
                 {!auth ? <li><Link to='/login'>Login</Link></li> : <li><Link to='/login' onClick={logout}>Logout</Link></li>}
 

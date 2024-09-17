@@ -32,7 +32,7 @@ function Navbar2(){
             <ul className={isActive ? styles.list_unvisible : styles.list_visible }>
                 {!auth ? <li><Link to='/'>Home</Link></li> : <li><Link to='/' state={dataUserLogged}>Home</Link></li>}
                 {!auth && <li><Link to='/register'>Register</Link></li>}
-                <li><Link to='/company'>App</Link></li>
+                {!auth ? <li><Link to='/company'>App</Link></li> : <li><Link to='/company' state={dataUserLogged}>App</Link></li>}
                 <li><Link to='/contact'>Contact</Link></li>
                 {!auth ? <li><Link to='/login'>Login</Link></li> : <li><Link to='/login' onClick={logout} >Logout</Link></li>}
 
